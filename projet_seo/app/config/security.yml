@@ -13,12 +13,18 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
+        main: 
+        # nom du pare-feu
+            pattern: ^/
+            anonymous: true
+            provider:  in_memory
+            form_login:
+                login_path: login
+                check_path: login_check
+            logout: 
+            # permet la déconnection
+                path:   logout
+                target: /platform
+                # URL vers laquelle sera redirigé le visiteur après sa déconnexion
 
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            
