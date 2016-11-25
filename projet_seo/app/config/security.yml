@@ -1,30 +1,42 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
+    encoders: # encodage du mot de passe
+        UserBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+
+    role_hierarchy: # comme son nom l'indique...
+        ROLE_USER: ROLE_USER
+        ROLE_ADMIN: [ROLE_ADMIN]
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+
+    providers: # manière de stocker l'information de l'utilisateur
+        db_provider:
+            entity:
+                class: UserBundle:User
 
     firewalls:
+        secured_area: # nom du pare-feu
+            pattern: ^/ # prend toutes les URL
+            anonymous: ~
+            form_login:
+                login_path : /login
+                check_path : /login
+                default_target_path: /index
+            logout:
+                path: /logout # permet la déconnection
+                target: /index # URL vers laquelle sera redirigé le visiteur après sa déconnexion
+
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        main: 
-        # nom du pare-feu
-            pattern: ^/
-            anonymous: true
-            provider:  in_memory
-            form_login:
-                login_path: login
-                check_path: login_check
-            logout: 
-            # permet la déconnection
-                path:   logout
-                target: /platform
-                # URL vers laquelle sera redirigé le visiteur après sa déconnexion
-
+        
+        #access_control: # activate different ways to authenticate
+        #- { path: ^/admin, roles : ROLE_ADMIN }
+        #- { path: ^/efconnect, roles: ROLE_ADMIN }
+        #- { path: ^/elfinder, roles: ROLE_ADMIN }
             
