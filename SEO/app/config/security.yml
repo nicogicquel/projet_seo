@@ -12,10 +12,16 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        
+        # neutralise le firewall secured_area et permet à un anonyme d'accéder au login
+        secured_login: 
+            pattern: ^/login$
+            anonymous: true
 
+        # firewall pour l'ensemble du site
         secured_area:
             pattern: ^/
-            anonymous: true
+            anonymous: false
             provider: in_memory
             form_login:
                 login_path: login
@@ -23,10 +29,4 @@ security:
             logout:
                 path: logout
                 target: /index
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            
