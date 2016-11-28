@@ -3,6 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+/*use Symfony\Component\Security\Core\User\UserInterface;*/
 
 /**
  * User
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
-class User
+class User /*implements UserInterface*/
 {
     /**
      * @var int
@@ -24,7 +25,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=100)
+     * @ORM\Column(name="username", type="string", length=100, unique=true)
      */
     private $username;
 
@@ -41,6 +42,13 @@ class User
      * @ORM\Column(name="salt", type="string", length=255)
      */
     private $salt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="roles", type="array")
+     */
+    /*private $role=array();*/
 
 
     /**
@@ -123,6 +131,35 @@ class User
     public function getSalt()
     {
         return $this->salt;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return User
+     */
+    /*public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return string
+     */
+    /*public function getRoles()
+    {
+        return $this->roles;
+    }*/
+
+    public function eraseCredentials()
+    {
+
     }
 }
 
