@@ -10,7 +10,7 @@ app:
 login:
     path: /login
     defaults:
-        _controller: UserBundle:security:login
+        _controller: UserBundle:Security:login
 
 login_check:
   path: /login_check
