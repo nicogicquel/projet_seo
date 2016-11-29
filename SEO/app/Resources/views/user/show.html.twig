@@ -21,6 +21,10 @@
                 <th>Salt</th>
                 <td>{{ user.salt }}</td>
             </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
+            </tr>
         </tbody>
     </table>
 

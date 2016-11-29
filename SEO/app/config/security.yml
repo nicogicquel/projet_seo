@@ -1,24 +1,30 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
-
+    encoders:
+        Symfony\Component\security\Core\User\\User: plaintext
+        UserBundle\Entity\User: plaintext
+            
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory:
-            memory: ~
+        db_provider:
+            entity: 
+                class: UserBundle\Entity\User
+                property: username
 
     role_hierarchy:
-        ROLE_USER: [ROLE_USER]
-        ROLE_ADMIN: [ROLE_ADMIN,ROLE_USER]
+        ROLE_USER: ROLE_USER
+        Role_ADMIN: [ROLE_ADMIN,ROLE_USER]
+
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        
+            security: false  
+
         # neutralise le firewall secured_area et permet à un anonyme d'accéder au login
-        secured_login: 
+        login: 
             pattern: ^/login$
             anonymous: true
 
@@ -26,11 +32,13 @@ security:
         secured_area:
             pattern: ^/
             anonymous: false
-            provider: in_memory
+            provider: db_provider
             form_login:
                 login_path: login
                 check_path: login_check
+                default_target_path: /
             logout:
                 path: logout
-                target: /index
-            
+                target: /login
+
+       

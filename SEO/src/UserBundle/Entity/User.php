@@ -3,7 +3,8 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-/*use Symfony\Component\Security\Core\User\UserInterface;*/
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * User
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
-class User /*implements UserInterface*/
+class User implements UserInterface
 {
     /**
      * @var int
@@ -48,7 +49,7 @@ class User /*implements UserInterface*/
      *
      * @ORM\Column(name="roles", type="array")
      */
-    /*private $role=array();*/
+    private $roles=array();
 
 
     /**
@@ -140,7 +141,7 @@ class User /*implements UserInterface*/
      *
      * @return User
      */
-    /*public function setRoles($roles)
+    public function setRoles($roles)
     {
         $this->roles = $roles;
 
@@ -152,10 +153,10 @@ class User /*implements UserInterface*/
      *
      * @return string
      */
-    /*public function getRoles()
+    public function getRoles()
     {
         return $this->roles;
-    }*/
+    }
 
     public function eraseCredentials()
     {
