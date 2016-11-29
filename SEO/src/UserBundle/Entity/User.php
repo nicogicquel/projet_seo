@@ -45,18 +45,11 @@ class User implements UserInterface
     private $salt;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="roles", type="array")
-     */
-    private $roles=array();
-
-    /**
-     * Many Users have One Address.
+     * 
      * @ORM\ManyToOne(targetEntity="Role")
      * @ORM\JoinColumn(name="role_id", referencedColumnName="id")
      */
-    private $role;
+    private $roles;
 
 
     /**
@@ -148,7 +141,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setRoles($roles)
+    public function setRoles($role)
     {
         $this->roles = $roles;
 
