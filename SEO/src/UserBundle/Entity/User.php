@@ -51,6 +51,13 @@ class User implements UserInterface
      */
     private $roles=array();
 
+    /**
+     * Many Users have One Address.
+     * @ORM\ManyToOne(targetEntity="Role")
+     * @ORM\JoinColumn(name="role_id", referencedColumnName="id")
+     */
+    private $role;
+
 
     /**
      * Get id
