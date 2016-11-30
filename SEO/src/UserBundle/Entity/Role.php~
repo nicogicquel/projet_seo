@@ -4,6 +4,7 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use UserBundle\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Role
@@ -35,6 +36,16 @@ class Role
      * @ORM\Column(name="role", type="string", length=255)
      */
     private $role;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="roles")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
 
     /**
@@ -95,4 +106,3 @@ class Role
         return $this->role;
     }
 }
-

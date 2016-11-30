@@ -1,3 +1,7 @@
+user_role:
+    resource: "@UserBundle/Controller/RoleController.php"
+    type:     annotation
+
 seo:
     resource: "@SeoBundle/Controller/"
     type:     annotation

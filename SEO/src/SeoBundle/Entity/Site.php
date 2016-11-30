@@ -108,7 +108,7 @@ class Site
     /**
      * @var string
      *
-     * @ORM\Column(name="difficulte", type="string", length=255, nullable=true)
+     * @ORM\Column(name="difficulte", type="text", nullable=true)
      */
     private $difficulte;
 
