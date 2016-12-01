@@ -2,58 +2,57 @@
 
 namespace UserBundle\Entity;
 
+use \Symfony\Component\Security\Core\Role\RoleInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use UserBundle\Entity\User;
-use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
 
 /**
- * Role
- *
- * @ORM\Table(name="role")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\RoleRepository")
+ * @ORM\Entity
+ * @ORM\Table(name="Role")
  */
-class Role
+class Role implements RoleInterface
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @var integer $id
      */
-    private $id;
+    protected $id;
 
     /**
-     * @var string
+     * @ORM\Column(type="string", length=255)
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @var string $name
      */
-    private $name;
+    protected $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="role", type="string", length=255)
+     * @ORM\Column(name="role", type="string", length=20, unique=true)
      */
     private $role;
 
     /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="roles")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="userRoles")
      */
     private $users;
 
+    /**
+     * Consturcts a new instance of Role.
+     */
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
 
     /**
-     * Get id
+     * Gets the id.
      *
-     * @return int
+     * @return integer The id.
      */
     public function getId()
     {
@@ -61,23 +60,9 @@ class Role
     }
 
     /**
-     * Set name
+     * Gets the role name.
      *
-     * @param string $name
-     *
-     * @return Role
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
+     * @return string The name.
      */
     public function getName()
     {
@@ -85,10 +70,41 @@ class Role
     }
 
     /**
+     * Sets the role name.
+     *
+     * @param string $value The name.
+     */
+    public function setName($value)
+    {
+        $this->name = $value;
+    }
+
+    /**
+     * Gets the DateTime the role was created.
+     *
+     * @return DateTime A DateTime object.
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Implementation of getRole for the RoleInterface.
+     *
+     * @return string The role.
+     */
+    public function getRole()
+    {
+        return $this->role;
+        //return $this->getName();
+    }
+
+
+    /**
      * Set role
      *
      * @param string $role
-     *
      * @return Role
      */
     public function setRole($role)
@@ -99,37 +115,26 @@ class Role
     }
 
     /**
-     * Get role
+     * Add users
      *
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * Add user
-     *
-     * @param \UserBundle\Entity\User $user
-     *
+     * @param \UserBundle\Entity\User $users
      * @return Role
      */
-    public function addUser(\UserBundle\Entity\User $user)
+    public function addUser(\UserBundle\Entity\User $users)
     {
-        $this->users[] = $user;
+        $this->users[] = $users;
 
         return $this;
     }
 
     /**
-     * Remove user
+     * Remove users
      *
-     * @param \UserBundle\Entity\User $user
+     * @param \UserBundle\Entity\User $users
      */
-    public function removeUser(\UserBundle\Entity\User $user)
+    public function removeUser(\UserBundle\Entity\User $users)
     {
-        $this->users->removeElement($user);
+        $this->users->removeElement($users);
     }
 
     /**

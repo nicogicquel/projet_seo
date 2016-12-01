@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\Role\RoleInterface;
 use UserBundle\Entity\Role;
 
 /**
@@ -14,7 +15,7 @@ use UserBundle\Entity\Role;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable 
 {
     /**
      * @var int
@@ -50,12 +51,12 @@ class User implements UserInterface
      * 
      * @ORM\ManyToMany(targetEntity="Role", inversedBy="users", cascade={"remove","persist"}))
      */
-    private $roles;
+    private $userRoles;
 
 
     public function __construct()
     {
-        $this->roles=new ArrayCollection();
+        $this->userRoles=new ArrayCollection();
     }
 
 
@@ -142,27 +143,27 @@ class User implements UserInterface
     }
 
     /**
-     * Set roles
+     * Set userRoles
      *
-     * @param integer $roles
+     * @param integer $userRoles
      *
      * @return User
      */
-    public function setRoles($role)
+    public function setUserRoles($userRoles)
     {
-        $this->roles = $roles;
+        $this->userRoles[] = $userRoles;
 
         return $this;
     }
 
     /**
-     * Get roles
+     * Get userRoles
      *
      * @return array
      */
-    public function getRoles()
+    public function getUserRoles()
     {
-        return $this->roles;
+        return $this->userRoles;
     }
 
     public function eraseCredentials()
@@ -171,26 +172,66 @@ class User implements UserInterface
     }
 
     /**
-     * Add role
+     * Renvoie l'objet au format serialisé
+     * @return string
+     */
+    public function serialize()
+    {
+        return \json_encode(array($this->id, $this->username, $this->password, $this->userRoles));
+    }
+
+    /**
+     * Renseigne les valeurs de l'objet à partir d'une chaine serialisée
+     * @param type $serialized
+     */
+    public function unserialize($serialized)
+    {
+        list($this->id, $this->username, $this->password, $this->userRoles) = \json_decode($serialized);
+    }
+
+
+    /**
+     * Add userRoles
      *
-     * @param \UserBundle\Entity\Role $role
+     * @param \UserBundle\Entity\UserRoles $userRoles
      *
      * @return User
      */
-    public function addRole(\UserBundle\Entity\Role $role)
+    public function addUserRole(\UserBundle\Entity\Role $userRoles)
     {
-        $this->roles[] = $role;
+        $this->userRoles[] = $userRoles;
 
         return $this;
     }
 
     /**
-     * Remove role
+     * Remove userRoles
      *
-     * @param \UserBundle\Entity\Role $role
+     * @param \UserBundle\Entity\Role $UserRoles
      */
-    public function removeRole(\UserBundle\Entity\Role $role)
+    public function removeUserRoles(\UserBundle\Entity\Role $userRoles)
     {
-        $this->roles->removeElement($role);
+        $this->userRoles->removeElement($userRoles);
+    }
+
+    /**
+     * Gets an array of roles.
+     *
+     * @return array An array of Role objects
+     */
+    public function getRoles()
+    {
+        return $this->userRoles->toArray();
+        
+    }
+
+    /**
+     * Remove userRole
+     *
+     * @param \UserBundle\Entity\Role $userRole
+     */
+    public function removeUserRole(\UserBundle\Entity\Role $userRole)
+    {
+        $this->userRoles->removeElement($userRole);
     }
 }
