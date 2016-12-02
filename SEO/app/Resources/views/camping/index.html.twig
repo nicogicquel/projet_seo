@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Campings list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Depcamping</th>
+                <th>Regioncamping</th>
+                <th>Villecamping</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for camping in campings %}
+            <tr>
+                <td><a href="{{ path('camping_show', { 'id': camping.id }) }}">{{ camping.id }}</a></td>
+                <td>{{ camping.name }}</td>
+                <td>{{ camping.depCamping }}</td>
+                <td>{{ camping.regionCamping }}</td>
+                <td>{{ camping.villeCamping }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('camping_show', { 'id': camping.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('camping_edit', { 'id': camping.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('camping_new') }}">Create a new camping</a>
+        </li>
+    </ul>
+{% endblock %}

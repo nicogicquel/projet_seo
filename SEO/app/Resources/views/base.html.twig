@@ -2,12 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
+        <link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/CSS/style.css') }}" />
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block header %}
+                <div class="header_container">
+                    <div class="logo_container">
+                        <a class="logo" href="www.lequipe.fr"></a>
+                    </div>
+                    <div class="title">
+                        <h1>Nom à définir</h1>
+                    </div>
+                <div>
+            {% endblock %}
+            {% block section %}
+            {% endblock %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

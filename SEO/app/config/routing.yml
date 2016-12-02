@@ -1,3 +1,11 @@
+seo_camping:
+    resource: "@SeoBundle/Controller/CampingController.php"
+    type:     annotation
+
+seo_site:
+    resource: "@SeoBundle/Controller/SiteController.php"
+    type:     annotation
+
 user_role:
     resource: "@UserBundle/Controller/RoleController.php"
     type:     annotation

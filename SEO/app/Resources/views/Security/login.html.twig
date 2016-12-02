@@ -1,25 +1,26 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    Connection
+{% endblock %}
 
+{% block section %}
+	{% if error %}
+	    <div class="alert alert-danger">{{ error.message }}</div>
+	{% endif %}
 
-{% block body %}
-{% if error %}
-    <div class="alert alert-danger">{{ error.message }}</div>
-{% endif %}
+	                  <form action="{{ path('login_check') }}" method="post" >
+	                    <label for="username">Login: </label>
 
-                  <form action="{{ path('login_check') }}" method="post" >
-                    <label for="username">Login: </label>
+	                    <input type="text" id="username" name="_username" value="{{ last_username}}" placeholder="Nom d'utilisateur"/>
 
-                    <input type="text" id="username" name="_username" value="{{ last_username}}" placeholder="Nom d'utilisateur"/>
+	                    <label for="password">Mot de passe: </label>
 
-                    <label for="password">Mot de passe: </label>
-
-                    <input type="password" id="password" name="_password" placeholder="Mot de passe"/>
-                    <br />
-                    <input type="submit">Connexion</button>
-                  </form>
-                
-            
-          
-
+	                    <input type="password" id="password" name="_password" placeholder="Mot de passe"/>
+	                    <br />
+	                    <input type="submit">Connexion</button>
+	                  </form>
+	                
+	            
+	
 {% endblock %}
