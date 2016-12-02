@@ -5,6 +5,7 @@ namespace SeoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class SiteType extends AbstractType
 {
@@ -13,7 +14,28 @@ class SiteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('url')->add('titre')->add('statut')->add('camp')->add('cT')->add('tF')->add('topical')->add('langue')->add('region')->add('departement')->add('ville')->add('type')->add('difficulte')->add('infos')        ;
+        $builder->add('url')
+                ->add('titre')
+                ->add('statut')
+                ->add('camp')
+                ->add('cT')
+                ->add('tF')
+                ->add('topical')
+                ->add('langue')
+                ->add('region')
+                ->add('departement')
+                ->add('ville')
+                ->add('type')
+                ->add('difficulte')
+                ->add('infos')
+                ->add('campings',EntityType::class, array(
+                            'class'=>'SeoBundle:Camping',
+                            'choice_label'=>'name',
+                            'label'=>'Campings',
+                            'multiple'=>true,
+                            'expanded'=>true,
+                            'empty_data'=>"ROLE_USER"
+                        ))        ;       
     }
     
     /**
