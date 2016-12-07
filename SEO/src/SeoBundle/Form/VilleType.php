@@ -5,19 +5,15 @@ namespace SeoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class CampingType extends AbstractType
+class VilleType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nomCamping')
-                ->add('depCamping')
-                ->add('regionCamping')
-                ->add('ville',EntityType::class,array('class'=>'SeoBundle:Ville','choice_label'=>'nom'));
+        $builder->add('nom')        ;
     }
     
     /**
@@ -26,7 +22,7 @@ class CampingType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'SeoBundle\Entity\Camping'
+            'data_class' => 'SeoBundle\Entity\Ville'
         ));
     }
 
@@ -35,7 +31,7 @@ class CampingType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'seobundle_camping';
+        return 'seobundle_ville';
     }
 
 

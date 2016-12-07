@@ -44,17 +44,16 @@ class Camping
     private $regionCamping;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="villeCamping", type="string", length=255)
-     */
-    private $villeCamping;
-
-    /**
      *
      * @ORM\ManyToMany(targetEntity="Site", mappedBy="campings")
      */
     protected $sites;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Ville",inversedBy="campings",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="ville_id", referencedColumnName="id")
+     */
+    private $ville;
 
 
     public function __construct()
@@ -124,29 +123,6 @@ class Camping
         return $this->regionCamping;
     }
 
-    /**
-     * Set villeCamping
-     *
-     * @param string $villeCamping
-     *
-     * @return Camping
-     */
-    public function setVilleCamping($villeCamping)
-    {
-        $this->villeCamping = $villeCamping;
-
-        return $this;
-    }
-
-    /**
-     * Get villeCamping
-     *
-     * @return string
-     */
-    public function getVilleCamping()
-    {
-        return $this->villeCamping;
-    }
 
     /**
      * Add site
@@ -189,7 +165,7 @@ class Camping
      *
      * @return Camping
      */
-    public function setNomCamping($nomCampings)
+    public function setNomCamping($nomCamping)
     {
         $this->nomCamping = $nomCamping;
 
@@ -204,5 +180,53 @@ class Camping
     public function getNomCamping()
     {
         return $this->nomCamping;
+    }
+
+    /**
+     * Add site
+     *
+     * @param \SeoBundle\Entity\Site $site
+     *
+     * @return Camping
+     */
+    public function addSite(\SeoBundle\Entity\Site $site)
+    {
+        $this->sites[] = $site;
+
+        return $this;
+    }
+
+    /**
+     * Remove site
+     *
+     * @param \SeoBundle\Entity\Site $site
+     */
+    public function removeSite(\SeoBundle\Entity\Site $site)
+    {
+        $this->sites->removeElement($site);
+    }
+
+    /**
+     * Set ville
+     *
+     * @param \SeoBundle\Entity\Ville $ville
+     *
+     * @return Camping
+     */
+    public function setVille(\SeoBundle\Entity\Ville $ville = null)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return \SeoBundle\Entity\Ville
+     */
+    public function getVille()
+    {
+        return $this->ville;
     }
 }

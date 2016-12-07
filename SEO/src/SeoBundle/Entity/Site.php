@@ -93,12 +93,6 @@ class Site
      */
     private $departement;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ville", type="string", length=100, nullable=true)
-     */
-    private $ville;
 
     /**
      * @var string
@@ -125,6 +119,13 @@ class Site
      * @ORM\ManyToMany(targetEntity="Camping", inversedBy="sites",cascade={"remove","persist"})
      */
     private $campings;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Ville",inversedBy="sites",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="ville_id", referencedColumnName="id")
+     */
+    private $ville;
+
 
     public function __construct()
     {
@@ -511,4 +512,19 @@ class Site
     {
         return $this->campings;
     }
+
+    /**
+     * Add camping
+     *
+     * @param \SeoBundle\Entity\Camping $camping
+     *
+     * @return Site
+     */
+    public function addCamping(\SeoBundle\Entity\Camping $camping)
+    {
+        $this->campings[] = $camping;
+
+        return $this;
+    }
+
 }

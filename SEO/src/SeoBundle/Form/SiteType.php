@@ -14,13 +14,26 @@ class SiteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('url')->add('titre')->add('statut')->add('camp')->add('cT')->add('tF')->add('topical')->add('langue')->add('region')->add('departement')->add('ville')->add('type')->add('difficulte')->add('infos')
-        ->add('campings',EntityType::class, array(
-                'class'=>'SeoBundle:Camping',
-                'choice_label'=>'nomCamping',
-                'label'=>'Role à attribuer',
-                'multiple'=>true,
-                'expanded'=>true
+        $builder->add('url')
+                ->add('titre')
+                ->add('statut')
+                ->add('camp')
+                ->add('cT')
+                ->add('tF')
+                ->add('topical')
+                ->add('langue')
+                ->add('region')
+                ->add('departement')
+                ->add('ville',EntityType::class,array('class'=>'SeoBundle:Ville','choice_label'=>'nom'))
+                ->add('type')
+                ->add('difficulte')
+                ->add('infos')
+                ->add('campings',EntityType::class, array(
+                        'class'=>'SeoBundle:Camping',
+                        'choice_label'=>'nomCamping',
+                        'label'=>'Role à attribuer',
+                        'multiple'=>true,
+                        'expanded'=>true
                 
                 ))        
    ;
