@@ -16,7 +16,8 @@ class CampingType extends AbstractType
     {
         $builder->add('nomCamping')
                 ->add('depCamping')
-                ->add('regionCamping')
+                ->add('region',EntityType::class,array('class'=>'SeoBundle:Region','choice_label'=>'nom'))
+                /*->add('departement',EntityType::class,array('class'=>'SeoBundle:Departement','choice_label'=>'nom'));*/
                 ->add('ville',EntityType::class,array('class'=>'SeoBundle:Ville','choice_label'=>'nom'));
     }
     

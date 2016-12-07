@@ -79,12 +79,6 @@ class Site
      */
     private $langue;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="region", type="string", length=100, nullable=true)
-     */
-    private $region;
 
     /**
      * @var string
@@ -125,6 +119,12 @@ class Site
      *@ORM\JoinColumn(name="ville_id", referencedColumnName="id")
      */
     private $ville;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Region",inversedBy="sites",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     */
+    private $region;
 
 
     public function __construct()

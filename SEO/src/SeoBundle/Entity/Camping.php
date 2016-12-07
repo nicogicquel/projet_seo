@@ -37,13 +37,6 @@ class Camping
     private $depCamping;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="regionCamping", type="string", length=255)
-     */
-    private $regionCamping;
-
-    /**
      *
      * @ORM\ManyToMany(targetEntity="Site", mappedBy="campings")
      */
@@ -54,6 +47,12 @@ class Camping
      *@ORM\JoinColumn(name="ville_id", referencedColumnName="id")
      */
     private $ville;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Region",inversedBy="campings",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     */
+    private $region;
 
 
     public function __construct()
@@ -100,27 +99,27 @@ class Camping
     }
 
     /**
-     * Set regionCamping
+     * Set region
      *
-     * @param string $regionCamping
+     * @param string $region
      *
      * @return Camping
      */
-    public function setRegionCamping($regionCamping)
+    public function setRegion($region)
     {
-        $this->regionCamping = $regionCamping;
+        $this->region = $region;
 
         return $this;
     }
 
     /**
-     * Get regionCamping
+     * Get region
      *
      * @return string
      */
-    public function getRegionCamping()
+    public function getRegion()
     {
-        return $this->regionCamping;
+        return $this->region;
     }
 
 
