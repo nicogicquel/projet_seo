@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <th>Roles</th>
-                <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
+                <td>{% if user.userRoles[0].name %}{{ user.userRoles[0].name|join(', ') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

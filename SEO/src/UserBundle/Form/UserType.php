@@ -17,7 +17,7 @@ class UserType extends AbstractType
         $builder->add('username')
                 ->add('password')
                 ->add('salt')
-                ->add('roles' ,EntityType::class, array(
+                ->add('userRoles' ,EntityType::class, array(
                     'class'=>'UserBundle:Role',
                 'choice_label'=>'name',
                 'label'=>'Role à attribuer',

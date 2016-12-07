@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class SiteType extends AbstractType
 {
@@ -18,23 +19,24 @@ class SiteType extends AbstractType
                 ->add('titre')
                 ->add('statut')
                 ->add('camp')
-                ->add('cT')
-                ->add('tF')
+                ->add('cT',TextType::class, array('label'=>'CT'))
+                ->add('tF',TextType::class, array('label'=>'TF'))
                 ->add('topical')
                 ->add('langue')
-                ->add('region')
-                ->add('departement')
+                ->add('region',TextType::class, array('label'=>'Région','required'=> false))
+                ->add('departement',TextType::class, array('label'=>'Département','required'=> false))
                 ->add('ville')
                 ->add('type')
-                ->add('difficulte')
-                ->add('infos')
+                ->add('difficulte',TextType::class, array('label'=>'Difficultés','required'=> false))
+                ->add('infos',TextType::class, array('label'=>'Informations Complémentaires','required'=> false))
                 ->add('campings',EntityType::class, array(
                             'class'=>'SeoBundle:Camping',
-                            'choice_label'=>'name',
+                            'choice_label'=>'nomCamping',
                             'label'=>'Campings',
                             'multiple'=>true,
                             'expanded'=>true,
-                            'empty_data'=>"ROLE_USER"
+                            'empty_data'=>"ROLE_USER",
+                            'required'=>false
                         ))        ;       
     }
     

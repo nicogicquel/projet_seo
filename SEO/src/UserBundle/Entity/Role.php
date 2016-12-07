@@ -120,7 +120,7 @@ class Role implements RoleInterface
      * @param \UserBundle\Entity\User $users
      * @return Role
      */
-    public function addUser(\UserBundle\Entity\User $users)
+    public function addUsers(\UserBundle\Entity\User $users)
     {
         $this->users[] = $users;
 
@@ -132,7 +132,7 @@ class Role implements RoleInterface
      *
      * @param \UserBundle\Entity\User $users
      */
-    public function removeUser(\UserBundle\Entity\User $users)
+    public function removeUsers(\UserBundle\Entity\User $users)
     {
         $this->users->removeElement($users);
     }

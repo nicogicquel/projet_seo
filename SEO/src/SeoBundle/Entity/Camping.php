@@ -25,9 +25,9 @@ class Camping
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="nomCamping", type="string", length=255)
      */
-    private $name;
+    private $nomCamping;
 
     /**
      * @var string
@@ -75,29 +75,6 @@ class Camping
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Camping
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     /**
      * Set depCamping
@@ -203,5 +180,29 @@ class Camping
     public function getSites()
     {
         return $this->sites;
+    }
+
+    /**
+     * Set nomCamping
+     *
+     * @param string $nomCamping
+     *
+     * @return Camping
+     */
+    public function setNomCamping($nomCamping)
+    {
+        $this->nomCamping = $nomCamping;
+
+        return $this;
+    }
+
+    /**
+     * Get nomCamping
+     *
+     * @return string
+     */
+    public function getNomCamping()
+    {
+        return $this->nomCamping;
     }
 }

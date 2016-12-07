@@ -7,10 +7,10 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Depcamping</th>
-                <th>Regioncamping</th>
-                <th>Villecamping</th>
+                <th>Nom</th>
+                <th>Département</th>
+                <th>Région</th>
+                <th>Ville</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -18,7 +18,7 @@
         {% for camping in campings %}
             <tr>
                 <td><a href="{{ path('camping_show', { 'id': camping.id }) }}">{{ camping.id }}</a></td>
-                <td>{{ camping.name }}</td>
+                <td>{{ camping.nomCamping }}</td>
                 <td>{{ camping.depCamping }}</td>
                 <td>{{ camping.regionCamping }}</td>
                 <td>{{ camping.villeCamping }}</td>

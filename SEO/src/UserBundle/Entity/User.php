@@ -56,7 +56,7 @@ class User implements UserInterface, \Serializable
 
     public function __construct()
     {
-        $this->userRoles=new ArrayCollection();
+        $this->userRoles= new ArrayCollection();
     }
 
 
@@ -225,13 +225,5 @@ class User implements UserInterface, \Serializable
         
     }
 
-    /**
-     * Remove userRole
-     *
-     * @param \UserBundle\Entity\Role $userRole
-     */
-    public function removeUserRole(\UserBundle\Entity\Role $userRole)
-    {
-        $this->userRoles->removeElement($userRole);
-    }
+    
 }
