@@ -22,10 +22,16 @@ class SiteType extends AbstractType
                 ->add('tF')
                 ->add('topical')
                 ->add('langue')
-                ->add('region',EntityType::class,array('class'=>'SeoBundle:Region','choice_label'=>'nom'))
+                ->add('region',EntityType::class,array(
+                    'class'=>'SeoBundle:Region',
+                    'choice_label'=>'nom'))
                 ->add('departement')
-                /*->add('departement',EntityType::class,array('class'=>'SeoBundle:Département','choice_label'=>'nom'))*/
-                ->add('ville',EntityType::class,array('class'=>'SeoBundle:Ville','choice_label'=>'nom'))
+                ->add('departement',EntityType::class,array(
+                    'class'=>'SeoBundle:Departement',
+                    'choice_label'=>'nom'))
+                ->add('ville',EntityType::class,array(
+                    'class'=>'SeoBundle:Ville',
+                    'choice_label'=>'nom'))
                 ->add('type')
                 ->add('difficulte')
                 ->add('infos')

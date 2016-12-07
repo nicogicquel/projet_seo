@@ -1,3 +1,7 @@
+seo_departement:
+    resource: "@SeoBundle/Controller/DepartementController.php"
+    type:     annotation
+
 seo_region:
     resource: "@SeoBundle/Controller/RegionController.php"
     type:     annotation

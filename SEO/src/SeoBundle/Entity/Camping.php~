@@ -204,28 +204,4 @@ class Camping
     {
         return $this->ville;
     }
-
-    /**
-     * Set departement
-     *
-     * @param \SeoBundle\Entity\Departement $departement
-     *
-     * @return Camping
-     */
-    public function setDepartement(\SeoBundle\Entity\Departement $departement = null)
-    {
-        $this->departement = $departement;
-
-        return $this;
-    }
-
-    /**
-     * Get departement
-     *
-     * @return \SeoBundle\Entity\Departement
-     */
-    public function getDepartement()
-    {
-        return $this->departement;
-    }
 }
