@@ -4,6 +4,7 @@ namespace SeoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use SeoBundle\Entity\Camping;
 
 /**
  * Site
@@ -121,7 +122,7 @@ class Site
     private $infos;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Camping", mappedBy="sites")
+     * @ORM\ManyToMany(targetEntity="Camping", inversedBy="sites",cascade={"remove","persist"})
      */
     private $campings;
 
@@ -484,9 +485,9 @@ class Site
      *
      * @return Site
      */
-    public function addCamping(\SeoBundle\Entity\Camping $camping)
+    public function addCampings(\SeoBundle\Entity\Camping $campings)
     {
-        $this->campings[] = $camping;
+        $this->campings[] = $campings;
 
         return $this;
     }
@@ -496,9 +497,9 @@ class Site
      *
      * @param \SeoBundle\Entity\Camping $camping
      */
-    public function removeCamping(\SeoBundle\Entity\Camping $camping)
+    public function removeCamping(\SeoBundle\Entity\Camping $campings)
     {
-        $this->campings->removeElement($camping);
+        $this->campings->removeElement($campings);
     }
 
     /**
