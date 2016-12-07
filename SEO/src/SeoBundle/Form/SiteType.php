@@ -21,7 +21,9 @@ class SiteType extends AbstractType
                 ->add('cT')
                 ->add('tF')
                 ->add('topical')
-                ->add('langue')
+                ->add('langue',EntityType::class,array(
+                    'class'=>'SeoBundle:Langue',
+                    'choice_label'=>'nom'))
                 ->add('region',EntityType::class,array(
                     'class'=>'SeoBundle:Region',
                     'choice_label'=>'nom'))

@@ -1,3 +1,7 @@
+seo_langue:
+    resource: "@SeoBundle/Controller/LangueController.php"
+    type:     annotation
+
 seo_departement:
     resource: "@SeoBundle/Controller/DepartementController.php"
     type:     annotation

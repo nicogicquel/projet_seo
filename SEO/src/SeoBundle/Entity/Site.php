@@ -72,13 +72,6 @@ class Site
      */
     private $topical;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="langue", type="string", length=20, nullable=true)
-     */
-    private $langue;
-
 
     /**
      * @var string
@@ -123,6 +116,12 @@ class Site
      *@ORM\JoinColumn(name="departement_id", referencedColumnName="id")
      */
     private $departement;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Langue",inversedBy="sites",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="langue_id", referencedColumnName="id")
+     */
+    private $langue;
 
 
     public function __construct()
