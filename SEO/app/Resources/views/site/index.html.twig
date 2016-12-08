@@ -35,11 +35,31 @@
                 <td>{{ site.cT }}</td>
                 <td>{{ site.tF }}</td>
                 <td>{{ site.topical }}</td>
+                {% if site.langue == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.langue.nom }}</td>
+                {% endif %}
+                {% if site.region == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.region.nom }}</td>
+                {% endif %}
+                {% if site.departement == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.departement.nom }}</td>
+                {% endif %}
+                {% if site.ville == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.ville.nom }}</td>
-                <td>{{ site.type }}</td>
+                {% endif %}
+                {% if site.type == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ site.type.nom }}</td>
+                {% endif %}
                 <td>{{ site.difficulte }}</td>
                 <td>{{ site.infos }}</td>
                 <td>

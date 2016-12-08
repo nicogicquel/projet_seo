@@ -23,18 +23,35 @@ class SiteType extends AbstractType
                 ->add('topical')
                 ->add('langue',EntityType::class,array(
                     'class'=>'SeoBundle:Langue',
-                    'choice_label'=>'nom'))
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez une langue'
+                    ))
                 ->add('region',EntityType::class,array(
                     'class'=>'SeoBundle:Region',
-                    'choice_label'=>'nom'))
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez une région'
+                    ))
                 ->add('departement')
                 ->add('departement',EntityType::class,array(
                     'class'=>'SeoBundle:Departement',
-                    'choice_label'=>'nom'))
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez un département'
+                    ))
                 ->add('ville',EntityType::class,array(
                     'class'=>'SeoBundle:Ville',
-                    'choice_label'=>'nom'))
-                ->add('type')
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez une langue'
+                    ))
+                ->add('type',EntityType::class,array(
+                    'class'=>'SeoBundle:Type',
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez un type'
+                    ))
                 ->add('difficulte')
                 ->add('infos')
                 ->add('campings',EntityType::class, array(

@@ -39,23 +39,43 @@
             </tr>
             <tr>
                 <th>Langue</th>
+                {% if site.langue == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.langue.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Region</th>
+                {% if site.region == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.region.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Departement</th>
+                {% if site.departement == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.departement.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Ville</th>
+                {% if site.ville == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ site.ville.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Type</th>
-                <td>{{ site.type }}</td>
+                {% if site.ville == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ site.type.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Difficulte</th>

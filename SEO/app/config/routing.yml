@@ -1,3 +1,7 @@
+seo_type:
+    resource: "@SeoBundle/Controller/TypeController.php"
+    type:     annotation
+
 seo_langue:
     resource: "@SeoBundle/Controller/LangueController.php"
     type:     annotation
