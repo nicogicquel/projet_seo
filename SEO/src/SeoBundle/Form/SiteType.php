@@ -16,11 +16,21 @@ class SiteType extends AbstractType
     {
         $builder->add('url')
                 ->add('titre')
-                ->add('statut')
+                ->add('statut',EntityType::class,array(
+                    'class'=>'SeoBundle:Statut',
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez un statut'
+                    ))
                 ->add('camp')
                 ->add('cT')
                 ->add('tF')
-                ->add('topical')
+                ->add('topical',EntityType::class,array(
+                    'class'=>'SeoBundle:Topical',
+                    'choice_label'=>'nom',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez un topic'
+                    ))
                 ->add('langue',EntityType::class,array(
                     'class'=>'SeoBundle:Langue',
                     'choice_label'=>'nom',

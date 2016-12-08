@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Topicals list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for topical in topicals %}
+            <tr>
+                <td><a href="{{ path('topical_show', { 'id': topical.id }) }}">{{ topical.id }}</a></td>
+                <td>{{ topical.nom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('topical_show', { 'id': topical.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('topical_edit', { 'id': topical.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('topical_new') }}">Create a new topical</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -19,7 +19,11 @@
             </tr>
             <tr>
                 <th>Statut</th>
-                <td>{{ site.statut }}</td>
+                {% if site.statut == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ site.statut.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Camp</th>
@@ -35,7 +39,11 @@
             </tr>
             <tr>
                 <th>Topical</th>
-                <td>{{ site.topical }}</td>
+                {% if site.topical == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ site.topical.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Langue</th>
@@ -71,7 +79,7 @@
             </tr>
             <tr>
                 <th>Type</th>
-                {% if site.ville == NULL %}
+                {% if site.type == NULL %}
                 <td></td>
                 {% else %}
                 <td>{{ site.type.nom }}</td>

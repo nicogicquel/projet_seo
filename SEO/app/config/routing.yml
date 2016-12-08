@@ -1,3 +1,11 @@
+seo_statut:
+    resource: "@SeoBundle/Controller/StatutController.php"
+    type:     annotation
+
+seo_topical:
+    resource: "@SeoBundle/Controller/TopicalController.php"
+    type:     annotation
+
 seo_type:
     resource: "@SeoBundle/Controller/TypeController.php"
     type:     annotation

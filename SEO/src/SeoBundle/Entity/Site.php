@@ -42,13 +42,7 @@ class Site
      *
      * @ORM\Column(name="statut", type="string", length=100, nullable=true)
      */
-    private $statut;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="camp", type="string", length=100, nullable=true)
-     */
+    
     private $camp;
 
     /**
@@ -64,13 +58,6 @@ class Site
      * @ORM\Column(name="TF", type="integer")
      */
     private $tF;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="topical", type="string", length=100, nullable=true)
-     */
-    private $topical;
 
     /**
      * @var string
@@ -120,6 +107,18 @@ class Site
      *@ORM\JoinColumn(name="type_id", referencedColumnName="id")
      */
     private $type;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Topical",inversedBy="sites",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="topical_id", referencedColumnName="id")
+     */
+    private $topical;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Statut",inversedBy="sites",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="statut_id", referencedColumnName="id")
+     */
+    private $statut;
 
 
     public function __construct()

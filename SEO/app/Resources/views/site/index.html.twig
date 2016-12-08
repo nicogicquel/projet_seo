@@ -30,11 +30,19 @@
                 <td><a href="{{ path('site_show', { 'id': site.id }) }}">{{ site.id }}</a></td>
                 <td>{{ site.url }}</td>
                 <td>{{ site.titre }}</td>
-                <td>{{ site.statut }}</td>
+                {% if site.statut == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ site.statut.nom }}</td>
+                {% endif %}
                 <td>{{ site.camp }}</td>
                 <td>{{ site.cT }}</td>
                 <td>{{ site.tF }}</td>
-                <td>{{ site.topical }}</td>
+                {% if site.topical == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ site.topical.nom }}</td>
+                {% endif %}
                 {% if site.langue == NULL %}
                 <td></td>
                 {% else %}
