@@ -12,12 +12,11 @@ class LoadRegion implements FixtureInterface
 	{
 		
 
-		$region=['Auvergne-Rhône-Alpe','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse','Grand-Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie','Pays-de-la-Loire','Provence-Alpes-Côte d\'azur'];
-		for ($i=0; $i < count($region); $i++) { 
-			$roles[$i] = new Role();
-			$roles[$i]->setRegion_id($name[$i]);
-			$roles[$i]->setRegion($role[$i]);
-			$manager->persist($roles);
+		$noms=['Auvergne-Rhône-Alpe','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse','Grand-Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie','Pays-de-la-Loire','Provence-Alpes-Côte d\'azur','All'];
+		foreach ($noms as $nom) { 
+			$region = new Region();
+			$region->setNom($nom);
+			$manager->persist($region);
 
 		}
 		$manager->flush();

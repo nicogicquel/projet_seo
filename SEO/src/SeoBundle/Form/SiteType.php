@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Doctrine\ORM\EntityRepository;
 
 class SiteType extends AbstractType
 {
@@ -52,6 +53,10 @@ class SiteType extends AbstractType
                     ))
                 ->add('ville',EntityType::class,array(
                     'class'=>'SeoBundle:Ville',
+                    'query_builder'=> function(EntityRepository $er){
+                        return $er->createQueryBuilder('v')
+                                  ->orderBy('v.nom', 'ASC');
+                    },
                     'choice_label'=>'nom',
                     'required'    => false,
                     'placeholder' => 'Choisissez une langue'

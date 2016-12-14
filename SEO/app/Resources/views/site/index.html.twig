@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Sites list</h1>
+{% block section %}
+    <h1>Liste des Url</h1>
 
-    <table>
+    <div class="panel panel-default content-forum">
+    <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Url</th>
                 <th>Titre</th>
                 <th>Statut</th>
@@ -15,8 +15,8 @@
                 <th>TF</th>
                 <th>Topical</th>
                 <th>Langue</th>
-                <th>Region</th>
-                <th>Departement</th>
+                <th>Région</th>
+                <th>Département</th>
                 <th>Ville</th>
                 <th>Type</th>
                 <th>Difficulte</th>
@@ -27,8 +27,7 @@
         <tbody>
         {% for site in sites %}
             <tr>
-                <td><a href="{{ path('site_show', { 'id': site.id }) }}">{{ site.id }}</a></td>
-                <td>{{ site.url }}</td>
+                <td><a href="{{ path('site_show', { 'id': site.id }) }}">{{ site.url }}</a></td>
                 <td>{{ site.titre }}</td>
                 {% if site.statut == NULL %}
                 <td></td>
@@ -84,7 +83,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <ul>
         <li>
             <a href="{{ path('site_new') }}">Create a new site</a>

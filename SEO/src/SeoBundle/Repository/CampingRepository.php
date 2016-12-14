@@ -10,4 +10,5 @@ namespace SeoBundle\Repository;
  */
 class CampingRepository extends \Doctrine\ORM\EntityRepository
 {
+	
 }

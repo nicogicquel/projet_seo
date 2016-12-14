@@ -63,14 +63,25 @@ class CampingController extends Controller
      * @Route("/{id}", name="camping_show")
      * @Method("GET")
      */
-    public function showAction(Camping $camping)
+    public function showAction(Request $request, Camping $camping)
     {
+        $region= $request->query->get('region_id');
+
         $deleteForm = $this->createDeleteForm($camping);
+
+        $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('SeoBundle:Site');
+  
+        $proposition = $repository->findSite($region);
 
         return $this->render('camping/show.html.twig', array(
             'camping' => $camping,
             'delete_form' => $deleteForm->createView(),
+            'proposition' => $proposition
         ));
+        var_dump($deleteForm);
     }
 
     /**
@@ -133,4 +144,6 @@ class CampingController extends Controller
             ->getForm()
         ;
     }
+
+    
 }

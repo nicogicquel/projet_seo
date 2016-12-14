@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Campings list</h1>
+{% block section %}
+    <h1>Liste des Campings</h1>
 
-    <table>
+    <table class='table'>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Département</th>
                 <th>Région</th>
@@ -17,8 +16,7 @@
         <tbody>
         {% for camping in campings %}
             <tr>
-                <td><a href="{{ path('camping_show', { 'id': camping.id }) }}">{{ camping.id }}</a></td>
-                <td>{{ camping.nomCamping }}</td>
+                <td><a href="{{ path('camping_show', { 'id': camping.id }) }}">{{ camping.nomCamping }}</a></td>
                 <td>{{ camping.departement.nom }}</td>
                 <td>{{ camping.region.nom }}</td>
                 <td>{{ camping.ville.nom }}</td>

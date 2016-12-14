@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../../sass/layout/header.css",
+	"sources": [
+		"../../sass/layout/header.scss"
+	],
+	"sourcesContent": [
+		".header_container {\r\n\theight: 150px;\r\n\tdisplay:flex;\r\n}\r\n.logo_container {\r\n\twidth: 35%;\r\n\tleft: 0px;\r\n\tbackground-color: white;\r\n}\r\n.logo {\r\n\timg {\r\n\t\theight: 150px;\r\n\t\twidth:100%;\r\n\t}\r\n}\r\n.header_title{\r\n\ttext-align: center;\r\n\tfont-size: 50px;\r\n\th1 {\r\n\t\tmargin:0.1em;\r\n\t}\r\n}"
+	],
+	"mappings": ";AAAA,AAAA,iBAAiB,CAAC;EACjB,MAAM,EAAE,KAAM;EACd,OAAO,EAAC,IAAK;CACb;;;AACD,AAAA,eAAe,CAAC;EACf,KAAK,EAAE,GAAI;EACX,IAAI,EAAE,GAAI;EACV,gBAAgB,EAAE,KAAM;CACxB;;;AACD,AACC,KADI,CACJ,GAAG,CAAC;EACH,MAAM,EAAE,KAAM;EACd,KAAK,EAAC,IAAK;CACX;;;AAEF,AAAA,aAAa,CAAA;EACZ,UAAU,EAAE,MAAO;EACnB,SAAS,EAAE,IAAK;CAIhB;;;AAND,AAGC,aAHY,CAGZ,EAAE,CAAC;EACF,MAAM,EAAC,KAAM;CACb",
+	"names": []
+}

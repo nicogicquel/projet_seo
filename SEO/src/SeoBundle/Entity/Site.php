@@ -40,7 +40,7 @@ class Site
     /**
      * @var string
      *
-     * @ORM\Column(name="statut", type="string", length=100, nullable=true)
+     * @ORM\Column(name="camp", type="string", length=100, nullable=true)
      */
     
     private $camp;

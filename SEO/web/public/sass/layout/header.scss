@@ -1,0 +1,22 @@
+.header_container {
+	height: 150px;
+	display:flex;
+}
+.logo_container {
+	width: 35%;
+	left: 0px;
+	background-color: white;
+}
+.logo {
+	img {
+		height: 150px;
+		width:100%;
+	}
+}
+.header_title{
+	text-align: center;
+	font-size: 50px;
+	h1 {
+		margin:0.2em;
+	}
+}

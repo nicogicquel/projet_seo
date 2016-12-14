@@ -10,4 +10,17 @@ namespace SeoBundle\Repository;
  */
 class SiteRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function findSite($region)
+	{
+	  $qb = $this->createQueryBuilder('s');
+
+	  $qb->where('s.region = :region_id')
+	       ->setParameter('region_id', $region);
+
+	  return $qb
+	    ->getQuery()
+	    ->getResult()
+	  ;
+	}
 }
