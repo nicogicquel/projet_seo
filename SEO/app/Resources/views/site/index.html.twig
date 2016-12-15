@@ -4,7 +4,7 @@
     <h1>Liste des Url</h1>
 
     <div class="panel panel-default content-forum">
-    <table class="table">
+    <table id="tableau" class="table">
         <thead>
             <tr>
                 <th>Url</th>
@@ -27,7 +27,7 @@
         <tbody>
         {% for site in sites %}
             <tr>
-                <td><a href="{{ path('site_show', { 'id': site.id }) }}">{{ site.url }}</a></td>
+                <td><a href="{{ site.url }}">{{ site.url }}</a></td>
                 <td>{{ site.titre }}</td>
                 {% if site.statut == NULL %}
                 <td></td>
@@ -89,4 +89,10 @@
             <a href="{{ path('site_new') }}">Create a new site</a>
         </li>
     </ul>
+<div class="camping">
+    {% for site in sites %}
+        {% for campings in site.campings %}
+            <p>{{ campings.nomCamping }}</p>
+        {% endfor %}
+    {% endfor %}
 {% endblock %}

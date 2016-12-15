@@ -22,12 +22,30 @@
                     </div>
                 </div>
             {% endblock %}
+
+    <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a a href="{{ path('index') }}">Accueil</a></li>
+                    <li><a href="{{ path('site_index') }}">Url</a></li>
+                    <li><a href="{{ path('camping_index') }}">Campings</a></li>
+                    <li><a href="{{ path('region_index') }}">Régions</a></li>
+                    <li><a href="{{ path('departement_index') }}">Départements</a></li>
+                    <li><a href="{{ path('ville_index') }}">Villes</a></li>
+                    <li><a href="{{ path('statut_index') }}">Statuts</a></li>
+                    <li><a href="{{ path('topical_index') }}">Topical</a></li>
+                    <li><a href="{{ path('langue_index') }}">Langues</a></li>
+                    <li><a href="{{ path('type_index') }}">Types</a></li>
+                    <li><a>Importation de fichier csv</a></li>
+                </ul>
+    </div>
             {% block section %}
             {% endblock %}
         {% endblock %}
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('public/script/jquery-3.1.0.min.js') }}"></script>
             <script src="{{ asset('public/script/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('public/script/dataTable.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('public/script/jquery.dataTables.min.js') }}"></script>
         {% endblock %}
     </body>
 </html>

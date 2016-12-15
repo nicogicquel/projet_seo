@@ -21,11 +21,13 @@
 .header_title {
   text-align: center;
   font-size: 50px;
+  background-color: white;
+  width: 65%;
 }
 
-/* line 19, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title h1 {
-  margin: 0.1em;
+  margin: 0.2em;
 }
 
 /*# sourceMappingURL=../../CSS/layout/header.map */

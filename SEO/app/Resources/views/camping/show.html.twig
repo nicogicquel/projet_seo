@@ -26,10 +26,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('camping_index') }}">Back to the list</a>
+            <a href="{{ path('camping_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('camping_edit', { 'id': camping.id }) }}">Edit</a>
+            <a href="{{ path('camping_edit', { 'id': camping.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -37,4 +37,7 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    
+        
 {% endblock %}

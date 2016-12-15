@@ -13,7 +13,7 @@ class SecurityController extends Controller
     {
     	if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_REMEMBERED'))
          {
-           return $this->redirectToRoute('index');
+           return $this->redirectToRoute('site_index');
         }
 
         $authenticationUtils = $this->get('security.authentication_utils');
@@ -25,6 +25,8 @@ class SecurityController extends Controller
             'error'         => $authenticationUtils->getLastAuthenticationError(),
         ));
     }
+
+    
 
     
 }

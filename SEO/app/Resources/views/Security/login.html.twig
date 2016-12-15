@@ -8,19 +8,21 @@
 	{% if error %}
 	    <div class="alert alert-danger">{{ error.message }}</div>
 	{% endif %}
+	<div class="bg"></div>
+			<div class="login-page">
+                <div class="form">
+	                 <form action="{{ path('login_check') }}" method="post" >
+	                    
+	                    <input class="form-control" type="text" id="username" name="_username" value="{{ last_username}}" placeholder="Nom d'utilisateur"/>
 
-	                  <form action="{{ path('login_check') }}" method="post" >
-	                    <label for="username">Login: </label>
+	                    
 
-	                    <input type="text" id="username" name="_username" value="{{ last_username}}" placeholder="Nom d'utilisateur"/>
-
-	                    <label for="password">Mot de passe: </label>
-
-	                    <input type="password" id="password" name="_password" placeholder="Mot de passe"/>
-	                    <br />
-	                    <input type="submit">Connexion</button>
-	                  </form>
-	                
+	                    <input class="form-control" type="password" id="password" name="_password" placeholder="Mot de passe"/>
+	                    	<br />
+	                    <button type="submit">Se connecter</button>
+	                </form>
+	            </div>
+	        </div>   
 	            
 	
 {% endblock %}

@@ -22,12 +22,15 @@ class CampingController extends Controller
      */
     public function indexAction()
     {
+        $deleteForm = $this->createDeleteForm($camping);
+
         $em = $this->getDoctrine()->getManager();
 
         $campings = $em->getRepository('SeoBundle:Camping')->findAll();
 
         return $this->render('camping/index.html.twig', array(
             'campings' => $campings,
+            'delete_form' => $deleteForm->createView()
         ));
     }
 
@@ -65,7 +68,7 @@ class CampingController extends Controller
      */
     public function showAction(Request $request, Camping $camping)
     {
-        $region= $request->query->get('region_id');
+        
 
         $deleteForm = $this->createDeleteForm($camping);
 
@@ -79,7 +82,7 @@ class CampingController extends Controller
         return $this->render('camping/show.html.twig', array(
             'camping' => $camping,
             'delete_form' => $deleteForm->createView(),
-            'proposition' => $proposition
+            
         ));
         var_dump($deleteForm);
     }
