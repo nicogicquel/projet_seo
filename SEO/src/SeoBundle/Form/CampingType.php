@@ -16,17 +16,28 @@ class CampingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nomCamping')
-                ->add('region',EntityType::class,array( 'class'=>'SeoBundle:Region',
-                                                        'choice_label'=>'nom'))
-                ->add('departement',EntityType::class,array('class'=>'SeoBundle:Departement',
-                                                            'choice_label'=>'nom'))
+                ->add('region',EntityType::class,array( 
+                  'class'=>'SeoBundle:Region',
+                  'choice_label'=>'nom',
+                  'label'=>'Région:',
+                  'required'    => false,
+                  'placeholder' => 'Choisissez une région'))
+                ->add('departement',EntityType::class,array(
+                  'class'=>'SeoBundle:Departement',
+                  'choice_label'=>'nom',
+                  'label'=>'Département:',
+                  'required'    => false,
+                  'placeholder' => 'Choisissez un département'))
                 ->add('ville',EntityType::class,array(  
                     'class'=>'SeoBundle:Ville',
                     'query_builder'=> function(EntityRepository $er){
                         return $er->createQueryBuilder('v')
                                   ->orderBy('v.nom', 'ASC');
                     },
-                    'choice_label'=>'nom'));
+                    'choice_label'=>'nom',
+                    'label'=>'Ville:',
+                    'required'    => false,
+                    'placeholder' => 'Choisissez une ville'));
     }
     
     /**

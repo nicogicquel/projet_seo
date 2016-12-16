@@ -11,15 +11,27 @@
             </tr>
             <tr>
                 <th>Département</th>
+                {% if camping.departement == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ camping.departement.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Région</th>
+                {% if camping.region == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ camping.region.nom }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Ville</th>
+                {% if camping.ville == NULL %}
+                <td></td>
+                {% else %}
                 <td>{{ camping.ville.nom }}</td>
+                {% endif %}
             </tr>
         </tbody>
     </table>

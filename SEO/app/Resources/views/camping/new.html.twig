@@ -1,16 +1,32 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    Création d'un camping
+{% endblock %}
+
 {% block section %}
-    <h1>Camping creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">Création d'un article</div>
+        <div class="panel-body">
+          <div class="container col-md-10 col-md-offset-1">
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+           
 
-    <ul>
-        <li>
-            <a href="{{ path('camping_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <hr>
+        <table>
+          <tr>
+            <td><input type="submit" value="Créer un camping" class="button" >
+              {{ form_end(form) }}
+            </td>
+            <td>
+              <div class="buttonLink">
+                <a href="{{ path('camping_index') }}">Retour à la liste</a>
+              </div>
+            </td>
+          </tr>
+        </table>
 {% endblock %}

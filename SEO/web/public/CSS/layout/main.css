@@ -1,4 +1,17 @@
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -11,7 +24,7 @@
   font-size: 14px;
 }
 
-/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 23, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -28,7 +41,25 @@
   border-radius: 15px;
 }
 
-/* line 27, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 38, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+/* line 42, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+/* line 47, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form .register-form {
+  display: none;
+}
+
+/* line 51, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form button:hover, .form button:active, .form button:focus {
   background: #0cf090;
   -webkit-transition: all 0.2s ease-in-out;
@@ -37,45 +68,14 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* line 34, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-
-/* line 39, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-/* line 43, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form .register-form {
-  display: none;
-}
-
-/* line 47, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 62, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
 
-/* line 52, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-/* line 64, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 69, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .bg {
   background: url(../img/login.jpg);
   background-size: 100%;
@@ -86,6 +86,120 @@
   bottom: 0;
   left: 0;
   z-index: -1;
+}
+
+/* line 82, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.buttonLink {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+/* line 87, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.buttonLink a {
+  background-color: #4ecd71;
+  color: #fff;
+  padding: 13px;
+  border-radius: 5px;
+}
+
+/* line 93, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.buttonLink a:hover {
+  background-color: #09ec49;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 105, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.button {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-style: none;
+  background-color: #4ecd71;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* line 116, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.button:hover {
+  background-color: #09ec49;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 123, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.panel {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  color: #777;
+  border-style: none;
+}
+
+/* line 129, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.panel .panel-heading {
+  font-size: 25px;
+  font-weight: lighter;
+  background-color: #98d44e;
+  color: #FFFFFF;
+  padding: 5px;
+}
+
+/* line 136, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.panel .panel-heading a {
+  color: #ffffff;
+  font-weight: lighter;
+  font-size: 25px;
+  margin-left: 15px;
+}
+
+/* line 143, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.panel .panel-heading a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 153, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+table {
+  border-radius: 5px;
+}
+
+/* line 157, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+section .row {
+  margin: 20px;
+}
+
+/* line 161, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 168, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#seobundle_camping label {
+  display: block;
+}
+
+/* line 171, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#seobundle_camping input {
+  display: block;
+}
+
+/* line 174, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#seobundle_camping select {
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=../../CSS/layout/main.map */
