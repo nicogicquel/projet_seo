@@ -5,6 +5,7 @@ namespace SeoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class DepartementType extends AbstractType
 {
@@ -13,7 +14,10 @@ class DepartementType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('code')->add('nom')        ;
+        $builder->add('code', TextType::class, array(
+                  'label'=>'Code:'))
+                ->add('nom', TextType::class, array(
+                  'label'=>'Nom:'));
     }
     
     /**
@@ -31,7 +35,7 @@ class DepartementType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'seobundle_departement';
+        return 'seobundle_form';
     }
 
 

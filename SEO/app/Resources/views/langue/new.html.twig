@@ -1,16 +1,31 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    Création d'une langue
+{% endblock %}
+
 {% block section %}
-    <h1>Langue creation</h1>
+    
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">Création d'une langue</div>
+        <div class="panel-body">
+          <div class="container col-md-10 col-md-offset-1">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <hr>
+                    <table>
+                        <tr>
+                            <td><input type="submit" value="Créer une langue" class="button" >
+                            {{ form_end(form) }}
+                            </td>
+                            <td>
+                            <div class="buttonLink">
+                                <a href="{{ path('langue_index') }}">Retour à la liste</a>
+                            </div>
+                        </td>
+                      </tr>
+                    </table>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('langue_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

@@ -1,16 +1,31 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    Ajout d'utilisateur
+{% endblock %}
+
 {% block section %}
-    <h1>User creation</h1>
+    
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">Ajout d'utilisateur</div>
+        <div class="panel-body">
+          <div class="container col-md-10 col-md-offset-1">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <hr>
+                    <table>
+                        <tr>
+                            <td><input type="submit" value="ajouter un utilisateur" class="button" >
+                            {{ form_end(form) }}
+                            </td>
+                            <td>
+                            <div class="buttonLink">
+                                <a href="{{ path('user_index') }}">Retour à la liste</a>
+                            </div>
+                        </td>
+                      </tr>
+                    </table>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

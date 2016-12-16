@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityRepository;
 
 class CampingType extends AbstractType
@@ -15,7 +16,8 @@ class CampingType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nomCamping')
+        $builder->add('nomCamping', TextType::class, array(
+                  'label'=>'Nom du Camping:'))
                 ->add('region',EntityType::class,array( 
                   'class'=>'SeoBundle:Region',
                   'choice_label'=>'nom',
@@ -55,7 +57,7 @@ class CampingType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'seobundle_camping';
+        return 'seobundle_form';
     }
 
 

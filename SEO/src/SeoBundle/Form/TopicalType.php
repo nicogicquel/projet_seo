@@ -5,6 +5,7 @@ namespace SeoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class TopicalType extends AbstractType
 {
@@ -13,7 +14,8 @@ class TopicalType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')        ;
+        $builder->add('nom', TextType::class, array(
+                  'label'=>'Nom:'));
     }
     
     /**
@@ -31,7 +33,7 @@ class TopicalType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'seobundle_topical';
+        return 'seobundle_form';
     }
 
 

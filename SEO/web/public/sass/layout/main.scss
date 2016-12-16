@@ -85,13 +85,15 @@
     margin-right: 10px;
     text-decoration: none;
     a{
-        background-color: #4ecd71;
+        background-color: #33b7c0;
         color: #fff;
+        opacity: 1;
         padding: 13px;
         border-radius: 5px;
     }
     a:hover{
-        background-color: #09ec49;
+        //background-color: #09ec49;
+        opacity: 0.5;
         text-decoration: none;
         color: #fff;
         border-radius: 5px;
@@ -106,7 +108,8 @@
   margin-bottom: 10px;
   margin-right: 10px;
   border-style: none;
-  background-color: #4ecd71;
+  background-color: #33b7c0;
+  opacity: 1;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -114,7 +117,8 @@
 }
 
 .button:hover{
-    background-color: #09ec49;
+    //background-color: #09ec49;
+    opacity: 0.5;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -164,7 +168,7 @@ section .row{
     clear: both;
 }
 
-#seobundle_camping{
+#seobundle_form{
     label{
         display:block;
     }
@@ -174,10 +178,23 @@ section .row{
         background-color: #ffc;
         opacity: 2;
         width: 210px;
+        
     }
     select{
         border-radius: 5px;
         padding: 5px;
         width: 210px;
     }
+    
+}
+.checkbox_form{
+    display:flex;
+    label{
+        width: 150px;
+    }
+    input{
+       width: 10px !important;
+       margin: 2px;
+    }
+    
 }
