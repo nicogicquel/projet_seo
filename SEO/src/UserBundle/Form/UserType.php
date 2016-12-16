@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserType extends AbstractType
 {
@@ -14,17 +15,19 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username')
-                ->add('password')
-                ->add('salt')
+        $builder->add('username', TextType::class, array(
+                    'label'=>'Username:'))
+                ->add('password', TextType::class, array(
+                    'label'=>'Password:'))
                 ->add('userRoles' ,EntityType::class, array(
                     'class'=>'UserBundle:Role',
                 'choice_label'=>'name',
-                'label'=>'Role à attribuer',
+                'attr'=> array('class'=>'checkbox_form'),
+                'label'=>'Role(s) à attribuer:',
                 'multiple'=>true,
                 'expanded'=>true,
                 'empty_data'=>"ROLE_USER"
-                ))        ;
+                ));
     }
     
     /**
@@ -42,7 +45,7 @@ class UserType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'userbundle_user';
+        return 'userbundle_form';
     }
 
 
