@@ -5,8 +5,8 @@
 		"../../sass/layout/header.scss"
 	],
 	"sourcesContent": [
-		".header_container {\r\n\theight: 150px;\r\n\tdisplay:flex;\r\n}\r\n.logo_container {\r\n\twidth: 35%;\r\n\tleft: 0px;\r\n\tbackground-color: white;\r\n}\r\n.logo {\r\n\timg {\r\n\t\theight: 150px;\r\n\t\twidth:100%;\r\n\t}\r\n}\r\n.header_title{\r\n\ttext-align: center;\r\n\tfont-size: 50px;\r\n\tbackground-color: white;\r\n\twidth: 65%;\r\n\th1 {\r\n\t\tmargin:0.2em;\r\n\t}\r\n}"
+		".header_container {\r\n\theight: 150px;\r\n\tdisplay:flex;\r\n}\r\n.logo_container {\r\n\twidth: 35%;\r\n\tleft: 0px;\r\n\tbackground-color: white;\r\n}\r\n.logo {\r\n\timg {\r\n\t\theight: 150px;\r\n\t\twidth:100%;\r\n\t}\r\n}\r\n.header_title{\r\n\ttext-align: center;\r\n\tfont-size: 50px;\r\n\tbackground-color: white;\r\n\twidth: 65%;\r\n\th1 {\r\n\t\tmargin:0.2em;\r\n\t\tcolor:#929294;\r\n\t\t@media (max-width: 1380px) {\r\n\t\t\tfont-size: 1.7em;\r\n\t\t\tmargin:0.23em;\r\n\t\t}\r\n\r\n\t}\r\n}"
 	],
-	"mappings": ";AAAA,AAAA,iBAAiB,CAAC;EACjB,MAAM,EAAE,KAAM;EACd,OAAO,EAAC,IAAK;CACb;;;AACD,AAAA,eAAe,CAAC;EACf,KAAK,EAAE,GAAI;EACX,IAAI,EAAE,GAAI;EACV,gBAAgB,EAAE,KAAM;CACxB;;;AACD,AACC,KADI,CACJ,GAAG,CAAC;EACH,MAAM,EAAE,KAAM;EACd,KAAK,EAAC,IAAK;CACX;;;AAEF,AAAA,aAAa,CAAA;EACZ,UAAU,EAAE,MAAO;EACnB,SAAS,EAAE,IAAK;EAChB,gBAAgB,EAAE,KAAM;EACxB,KAAK,EAAE,GAAI;CAIX;;;AARD,AAKC,aALY,CAKZ,EAAE,CAAC;EACF,MAAM,EAAC,KAAM;CACb",
+	"mappings": ";AAAA,AAAA,iBAAiB,CAAC;EACjB,MAAM,EAAE,KAAM;EACd,OAAO,EAAC,IAAK;CACb;;;AACD,AAAA,eAAe,CAAC;EACf,KAAK,EAAE,GAAI;EACX,IAAI,EAAE,GAAI;EACV,gBAAgB,EAAE,KAAM;CACxB;;;AACD,AACC,KADI,CACJ,GAAG,CAAC;EACH,MAAM,EAAE,KAAM;EACd,KAAK,EAAC,IAAK;CACX;;;AAEF,AAAA,aAAa,CAAA;EACZ,UAAU,EAAE,MAAO;EACnB,SAAS,EAAE,IAAK;EAChB,gBAAgB,EAAE,KAAM;EACxB,KAAK,EAAE,GAAI;CAUX;;;AAdD,AAKC,aALY,CAKZ,EAAE,CAAC;EACF,MAAM,EAAC,KAAM;EACb,KAAK,EAAC,OAAQ;CAMd;;AALA,MAAM,EAAL,SAAS,EAAE,MAAM;;EARpB,AAKC,aALY,CAKZ,EAAE,CAAC;IAID,SAAS,EAAE,KAAM;IACjB,MAAM,EAAC,MAAO;GAGf",
 	"names": []
 }

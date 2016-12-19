@@ -13,7 +13,7 @@ class SiteRepository extends \Doctrine\ORM\EntityRepository
 
 	public function findSite($region)
 	{
-	  $qb = $this->createQueryBuilder('s');
+	  /*$qb = $this->createQueryBuilder('s');
 
 	  $qb->where('s.region = :region_id')
 	       ->setParameter('region_id', $region);
@@ -21,6 +21,13 @@ class SiteRepository extends \Doctrine\ORM\EntityRepository
 	  return $qb
 	    ->getQuery()
 	    ->getResult()
+	  ;*/
+
+	 return $this->createQueryBuilder('s')
+			->where('s.region = :region_id')
+	       	->setParameter('region_id', $region)
+	    	->getQuery()
+	    	->getResult()
 	  ;
 	}
 }

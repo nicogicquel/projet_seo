@@ -70,3 +70,4 @@ login_check:
 
 logout:
   path: /logout
+

@@ -34,6 +34,34 @@ Author URI: http://www.francecom.fr/
 /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title h1 {
   margin: 0.2em;
+  color: #929294;
+}
+
+@media (max-width: 1380px) {
+  /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+  .header_title h1 {
+    font-size: 1.7em;
+    margin: 0.23em;
+  }
+}
+
+/* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar {
+  background-color: #f59331;
+  border: none;
+}
+
+/* line 7, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar-nav a {
+  color: #fff !important;
+}
+
+/* line 9, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar-nav a:hover {
+  background-color: #fff !important;
+  color: #f59331 !important;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
 }
 
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
@@ -131,7 +159,7 @@ Author URI: http://www.francecom.fr/
   margin-bottom: 10px;
   margin-right: 10px;
   border-style: none;
-  background-color: rgba(255, 0, 0, 0.72);
+  background-color: #c6356a;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -193,8 +221,9 @@ Author URI: http://www.francecom.fr/
   transition: all 0.2s ease-in-out;
 }
 
-/* line 141, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 140, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel {
+  margin-top: 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   color: #777;
   border-style: none;
@@ -204,12 +233,12 @@ Author URI: http://www.francecom.fr/
 .panel .panel-heading {
   font-size: 25px;
   font-weight: lighter;
-  background-color: #98d44e;
+  background-color: #33b7c0;
   color: #FFFFFF;
   padding: 5px;
 }
 
-/* line 154, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 153, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a {
   color: #ffffff;
   font-weight: lighter;
@@ -217,7 +246,7 @@ Author URI: http://www.francecom.fr/
   margin-left: 15px;
 }
 
-/* line 161, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 158, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a:hover {
   text-decoration: none;
   text-shadow: 0px 0px 10px #fff;
@@ -227,29 +256,47 @@ Author URI: http://www.francecom.fr/
   transition: all 0.2s ease-in-out;
 }
 
-/* line 171, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 169, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 table {
   border-radius: 5px;
 }
 
-/* line 175, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 173, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+thead {
+  background-color: #33b7c0;
+  color: #fff;
+}
+
+/* line 178, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.table {
+  width: 95%;
+  margin: auto;
+  border-radius: 50px;
+}
+
+/* line 182, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.table td {
+  border: 1px solid #ddd !important;
+}
+
+/* line 188, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 section .row {
   margin: 20px;
 }
 
-/* line 179, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 192, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .container:before, .container:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 186, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 199, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form label, #userbundle_form label {
   display: block;
 }
 
-/* line 189, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 202, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form input, #userbundle_form input {
   display: block;
   border-radius: 5px;
@@ -258,24 +305,24 @@ section .row {
   width: 210px;
 }
 
-/* line 197, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 210, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form select, #userbundle_form select {
   border-radius: 5px;
   padding: 5px;
   width: 210px;
 }
 
-/* line 204, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 217, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form {
   display: flex;
 }
 
-/* line 206, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 219, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form label {
   width: 150px;
 }
 
-/* line 209, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 222, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form input {
   width: 10px !important;
   margin: 2px;

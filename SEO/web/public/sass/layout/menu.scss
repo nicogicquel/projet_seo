@@ -1,0 +1,17 @@
+.navbar{
+    background-color: #f59331;
+    border: none;
+}
+
+.navbar-nav{
+    a{
+      color: #fff !important;
+      &:hover {
+      	background-color: #fff !important;
+      	color: #f59331 !important;
+      	transition: 0.2s;
+    	-webkit-transition:  0.2s;
+      }  
+    }
+}
+

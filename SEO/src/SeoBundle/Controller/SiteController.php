@@ -133,4 +133,24 @@ class SiteController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * List of url proposals according to a campsite
+     *
+     * @Route("/propositions", name="site_propositions")
+     * @Method("GET")
+     */
+    public function propositionAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $region = 138;
+        $sites = $em->getRepository('SeoBundle:Site')->findSite($region);
+
+        return $this->render('site/propositions.html.twig', array(
+            'sites' => $sites,
+        ));
+        
+
+    }
 }

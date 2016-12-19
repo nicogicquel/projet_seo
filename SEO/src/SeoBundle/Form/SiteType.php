@@ -19,12 +19,13 @@ class SiteType extends AbstractType
         $builder->add('url', TextType::class, array(
                     'label'=>'Url du site:'))
                 ->add('titre', TextType::class, array(
-                    'label'=>'Titre:'))
+                    'label'=>'Titre:',
+                    'required'=> false))
                 ->add('statut',EntityType::class,array(
                     'class'=>'SeoBundle:Statut',
                     'choice_label'=>'nom',
                     'label'=>'Statut:',
-                    'required'    => false,
+                    'required'=> false,
                     'placeholder' => 'Choisissez un statut'
                     ))
                 ->add('cT', TextType::class, array(
@@ -35,21 +36,21 @@ class SiteType extends AbstractType
                     'class'=>'SeoBundle:Topical',
                     'choice_label'=>'nom',
                     'label'=>'Topic:',
-                    'required'    => false,
+                    'required'=> false,
                     'placeholder' => 'Choisissez un topic'
                     ))
                 ->add('langue',EntityType::class,array(
                     'class'=>'SeoBundle:Langue',
                     'choice_label'=>'nom',
                     'label'=>'Langue:',
-                    'required'    => false,
+                    'required' => false,
                     'placeholder' => 'Choisissez une langue'
                     ))
                 ->add('region',EntityType::class,array(
                     'class'=>'SeoBundle:Region',
                     'choice_label'=>'nom',
                     'label'=>'Région:',
-                    'required'    => false,
+                    'required'=> false,
                     'placeholder' => 'Choisissez une région'
                     ))
                 ->add('departement')
@@ -57,7 +58,7 @@ class SiteType extends AbstractType
                     'class'=>'SeoBundle:Departement',
                     'choice_label'=>'nom',
                     'label'=>'Département:',
-                    'required'    => false,
+                    'required'=> false,
                     'placeholder' => 'Choisissez un département'
                     ))
                 ->add('ville',EntityType::class,array(
@@ -68,20 +69,22 @@ class SiteType extends AbstractType
                     },
                     'choice_label'=>'nom',
                     'label'=>'Ville:',
-                    'required'    => false,
+                    'required'=> false,
                     'placeholder' => 'Choisissez une langue'
                     ))
                 ->add('type',EntityType::class,array(
                     'class'=>'SeoBundle:Type',
                     'choice_label'=>'nom',
                     'label'=>'Type de site:',
-                    'required'    => false,
+                    'required'=> false,
                     'placeholder' => 'Choisissez un type'
                     ))
                 ->add('difficulte', TextType::class, array(
-                    'label'=>'Difficultés:'))
+                    'label'=>'Difficultés:',
+                    'required'=> false))
                 ->add('infos', TextType::class, array(
-                    'label'=>'Informations complémentaires:'))
+                    'label'=>'Informations complémentaires:',
+                    'required'=> false))
                 ->add('campings',EntityType::class, array(
                         'class'=>'SeoBundle:Camping',
                         'choice_label'=>'nomCamping',

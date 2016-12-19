@@ -1,2 +1,20 @@
+/* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar {
+  background-color: #f59331;
+  border: none;
+}
+
+/* line 7, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar-nav a {
+  color: #fff !important;
+}
+
+/* line 9, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar-nav a:hover {
+  background-color: #fff !important;
+  color: #f59331 !important;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+}
 
 /*# sourceMappingURL=../../CSS/layout/menu.map */

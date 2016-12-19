@@ -20,5 +20,11 @@
 	width: 65%;
 	h1 {
 		margin:0.2em;
+		color:#929294;
+		@media (max-width: 1380px) {
+			font-size: 1.7em;
+			margin:0.23em;
+		}
+
 	}
 }

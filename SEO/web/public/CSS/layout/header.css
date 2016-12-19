@@ -28,6 +28,15 @@
 /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title h1 {
   margin: 0.2em;
+  color: #929294;
+}
+
+@media (max-width: 1380px) {
+  /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+  .header_title h1 {
+    font-size: 1.7em;
+    margin: 0.23em;
+  }
 }
 
 /*# sourceMappingURL=../../CSS/layout/header.map */

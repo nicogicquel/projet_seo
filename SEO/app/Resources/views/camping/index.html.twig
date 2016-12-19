@@ -3,6 +3,7 @@
 {% block section %}
     <h1>Liste des Campings</h1>
 
+    
     <table class='table'>
         <thead>
             <tr>
@@ -35,13 +36,13 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('camping_show', { 'id': camping.id }) }}">show</a>
+                            <a href="{{ path('camping_show', { 'id': camping.id }) }}">Détails</a>
                         </li>
                         <li>
-                            <a href="{{ path('camping_edit', { 'id': camping.id }) }}">edit</a>
+                            <a href="{{ path('camping_edit', { 'id': camping.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('camping_delete', { 'id': camping.id }) }}">Supprimer l'article</a>
+                            <a href="{{ path('camping_delete', { 'id': camping.id }) }}">Supprimer </a>
                         </li>
                     </ul>
                 </td>
@@ -52,7 +53,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('camping_new') }}">Create a new camping</a>
+            <a href="{{ path('camping_new') }}">Créer un nouveau camping</a>
         </li>
     </ul>
 {% endblock %}
