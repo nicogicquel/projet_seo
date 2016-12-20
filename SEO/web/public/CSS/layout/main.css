@@ -195,24 +195,42 @@ table {
   border-radius: 5px;
 }
 
-/* line 176, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 173, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+thead {
+  background-color: #33b7c0;
+  color: #fff;
+}
+
+/* line 178, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.table {
+  width: 95%;
+  margin: auto;
+  border-radius: 50px;
+}
+
+/* line 182, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.table td {
+  border: 1px solid #ddd !important;
+}
+
+/* line 188, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 section .row {
   margin: 20px;
 }
 
-/* line 180, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 192, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .container:before, .container:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 187, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 199, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form label, #userbundle_form label {
   display: block;
 }
 
-/* line 190, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 202, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form input, #userbundle_form input {
   display: block;
   border-radius: 5px;
@@ -221,24 +239,24 @@ section .row {
   width: 210px;
 }
 
-/* line 198, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 210, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form select, #userbundle_form select {
   border-radius: 5px;
   padding: 5px;
   width: 210px;
 }
 
-/* line 205, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 217, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form {
   display: flex;
 }
 
-/* line 207, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 219, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form label {
   width: 150px;
 }
 
-/* line 210, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 222, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form input {
   width: 10px !important;
   margin: 2px;

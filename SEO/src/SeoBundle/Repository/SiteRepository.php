@@ -11,23 +11,19 @@ namespace SeoBundle\Repository;
 class SiteRepository extends \Doctrine\ORM\EntityRepository
 {
 
-	public function findSite($region)
+	public function findSite($region, $departement, $ville)
 	{
-	  /*$qb = $this->createQueryBuilder('s');
-
-	  $qb->where('s.region = :region_id')
-	       ->setParameter('region_id', $region);
-
-	  return $qb
-	    ->getQuery()
-	    ->getResult()
-	  ;*/
 
 	 return $this->createQueryBuilder('s')
-			->where('s.region = :region_id')
-	       	->setParameter('region_id', $region)
-	    	->getQuery()
-	    	->getResult()
+		->where('(s.region = 139 ) OR
+			(s.region = :region_id AND s.departement = :departement_id AND s.ville IS NULL) OR
+			s.region = :region_id AND s.departement = :departement_id AND s.ville = :ville_id') 
+		
+	    ->setParameter('region_id', $region)
+	    ->setParameter('departement_id', $departement)
+	    ->setParameter('ville_id', $ville)
+	   	->getQuery()
+	    ->getResult()
 	  ;
 	}
 }

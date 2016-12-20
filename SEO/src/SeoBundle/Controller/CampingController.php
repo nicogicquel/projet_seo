@@ -67,23 +67,21 @@ class CampingController extends Controller
      */
     public function showAction(Request $request, Camping $camping)
     {
-        
-
+        $em = $this->getDoctrine()->getManager();
+        $region= $camping->getRegion();
+        $departement= $camping->getDepartement();
+        $ville= $camping->getVille();
+        $sites = $em->getRepository('SeoBundle:Site')->findSite($region, $departement, $ville);
         $deleteForm = $this->createDeleteForm($camping);
 
-        $repository = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('SeoBundle:Site');
-  
-       
 
         return $this->render('camping/show.html.twig', array(
             'camping' => $camping,
             'delete_form' => $deleteForm->createView(),
+            'sites' => $sites
             
         ));
-        var_dump($deleteForm);
+        
     }
 
     /**
