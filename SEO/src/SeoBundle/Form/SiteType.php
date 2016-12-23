@@ -5,9 +5,13 @@ namespace SeoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityRepository;
+use SeoBundle\Entity\Region;
 
 class SiteType extends AbstractType
 {
@@ -46,6 +50,21 @@ class SiteType extends AbstractType
                     'required' => false,
                     'placeholder' => 'Choisissez une langue'
                     ))
+                
+                ->add('type',EntityType::class,array(
+                    'class'=>'SeoBundle:Type',
+                    'choice_label'=>'nom',
+                    'label'=>'Type de site:',
+                    'required'=> false,
+                    'placeholder' => 'Choisissez un type'
+                    ))
+                ->add('difficulte', TextType::class, array(
+                    'label'=>'Difficultés:',
+                    'required'=> false))
+                ->add('infos', TextType::class, array(
+                    'label'=>'Informations complémentaires:',
+                    'required'=> false))
+                
                 ->add('region',EntityType::class,array(
                     'class'=>'SeoBundle:Region',
                     'choice_label'=>'nom',
@@ -61,7 +80,7 @@ class SiteType extends AbstractType
                     'required'=> false,
                     'placeholder' => 'Choisissez un département'
                     ))
-                ->add('ville',EntityType::class,array(
+                /*->add('ville',EntityType::class,array(
                     'class'=>'SeoBundle:Ville',
                     'query_builder'=> function(EntityRepository $er){
                         return $er->createQueryBuilder('v')
@@ -70,31 +89,56 @@ class SiteType extends AbstractType
                     'choice_label'=>'nom',
                     'label'=>'Ville:',
                     'required'=> false,
-                    'placeholder' => 'Choisissez une langue'
-                    ))
-                ->add('type',EntityType::class,array(
-                    'class'=>'SeoBundle:Type',
-                    'choice_label'=>'nom',
-                    'label'=>'Type de site:',
-                    'required'=> false,
-                    'placeholder' => 'Choisissez un type'
-                    ))
-                ->add('difficulte', TextType::class, array(
-                    'label'=>'Difficultés:',
-                    'required'=> false))
-                ->add('infos', TextType::class, array(
-                    'label'=>'Informations complémentaires:',
-                    'required'=> false))
+                    'placeholder' => 'Choisissez une ville'
+                    ))*/
+                ->add('ville',VilleType::class,array(
+                    'label'=> false))
+
                 ->add('campings',EntityType::class, array(
                         'class'=>'SeoBundle:Camping',
                         'choice_label'=>'nomCamping',
                         'attr'=> array('class'=>'checkbox_form'),
                         'label'=>'Campings liés',
                         'multiple'=>true,
-                        'expanded'=>true
+                        'expanded'=>true)) 
                 
-                ))        
+                       
    ;
+   $formModifier = function (FormInterface $form, Region $region = null) {
+        $departement = null === $region ? array() : $region->getDepartements();
+
+        $form->add('departement', EntityType::class,array(
+                  'class'=>'SeoBundle:Departement',
+                  'choices'     => $departement,
+                  'choice_label' => 'nom',
+                  'label'=>'Département:',
+                  'required'    => false,
+                  'placeholder' => 'Choisissez un département'));
+      
+      };
+
+      $builder->addEventListener(
+      FormEvents::PRE_SET_DATA,
+      function (FormEvent $event) use ($formModifier) {
+        
+        $data = $event->getData();
+
+        $formModifier($event->getForm(), $data->getRegion());
+      }
+    );
+
+      $builder->get('region')->addEventListener(
+      FormEvents::POST_SUBMIT,
+      function (FormEvent $event) use ($formModifier) {
+        // It's important here to fetch $event->getForm()->getData(), as
+        // $event->getData() will get you the client data (that is, the ID)
+        $region = $event->getForm()->getData();
+
+        // since we've added the listener to the child, we'll have to pass on
+        // the parent to the callback functions!
+        $formModifier($event->getForm()->getParent(), $region);
+      }
+    );
     }
     
     /**

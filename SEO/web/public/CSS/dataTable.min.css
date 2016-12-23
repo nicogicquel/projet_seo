@@ -23,16 +23,19 @@ div.dataTables_wrapper div.dataTables_length label{
 	}
 div.dataTables_wrapper div.dataTables_length select{
 	width:75px;
-	display:inline-block
+	display:inline-block;
+	margin-top: 12px;
 }
 div.dataTables_wrapper div.dataTables_filter{
-	text-align:right
+	position: absolute;
+    right: 7%;
 }
 div.dataTables_wrapper div.dataTables_filter label{
 	font-weight:normal;
 	white-space:nowrap;
 	text-align:left;
 	margin-right: 6%;
+
 	}
 div.dataTables_wrapper div.dataTables_filter input{
 	margin-left:0.5em;
@@ -40,6 +43,7 @@ div.dataTables_wrapper div.dataTables_filter input{
 	width:auto;
 	background-color: #ffc;
 	border-radius: 5px;
+	margin-top: 13px;
 }
 div.dataTables_wrapper div.dataTables_info{
 	padding-top:8px;

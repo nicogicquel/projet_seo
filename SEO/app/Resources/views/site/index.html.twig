@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block section %}
-    <h1>Liste des Url</h1>
+    <div class="formHead">
+        <h1>Liste des Url</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('site_new') }}">Ajouter une nouvelle Url</a>
+        </div>
+    </div>
 
     <table id="tableau" class="table">
         <thead>
@@ -88,16 +93,9 @@
         {% endfor %}
         </tbody>
     </table>
-</div>
-    <ul>
-        <li>
-            <a href="{{ path('site_new') }}">Ajouter une nouvelle url</a>
-        </li>
-    </ul>
-<div class="camping">
-    {% for site in sites %}
-        {% for campings in site.campings %}
-            <p>{{ campings.nomCamping }}</p>
-        {% endfor %}
-    {% endfor %}
+
+    <div class="buttonAddBottom">
+        <a href="{{ path('camping_new') }}">Ajouter une nouvelle Url</a>
+    </div>
+
 {% endblock %}

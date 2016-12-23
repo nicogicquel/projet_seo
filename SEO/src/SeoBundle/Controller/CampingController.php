@@ -100,7 +100,8 @@ class CampingController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('camping_edit', array('id' => $camping->getId()));
+            return $this->redirectToRoute('camping_show', array('id' => $camping->getId()));
+            //return $this->redirect($_SERVER['HTTP_REFERER']);
         }
 
         return $this->render('camping/edit.html.twig', array(

@@ -16,7 +16,7 @@ class VilleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom', TextType::class, array(
-                    'label'=>'Nom:'))
+                    'label'=>'Ville:'))
                 /*->add('departement',EntityType::class,array(
                     'class'=>'SeoBundle:Departement',
                     'choice_label'=>'nom',

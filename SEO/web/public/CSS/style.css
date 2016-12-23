@@ -84,8 +84,13 @@ hr {
   border-color: #cccccc;
 }
 
+/* line 15, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#separate {
+  width: 75%;
+}
+
 /**Les Formulaires**/
-/* line 18, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form {
   position: relative;
   z-index: 1;
@@ -98,7 +103,7 @@ hr {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-/* line 29, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 32, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -111,32 +116,32 @@ hr {
   font-size: 14px;
 }
 
-/* line 41, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 44, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
 
-/* line 45, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 48, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form .message a {
   color: #4CAF50;
   text-decoration: none;
 }
 
-/* line 50, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 53, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form .register-form {
   display: none;
 }
 
-/* line 56, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 59, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form label, #userbundle_form label, #seobundle_form_nomCamping label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-/* line 61, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 64, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form input, #userbundle_form input, #seobundle_form_nomCamping input {
   display: block;
   border-radius: 5px;
@@ -145,7 +150,7 @@ hr {
   width: 210px;
 }
 
-/* line 69, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 72, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #seobundle_form select, #userbundle_form select, #seobundle_form_nomCamping select {
   border-radius: 5px;
   padding: 5px;
@@ -153,14 +158,14 @@ hr {
 }
 
 /**Page Login**/
-/* line 79, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 82, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
 
-/* line 86, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 89, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .bg {
   background: url(../img/login.jpg);
   background-size: 100%;
@@ -174,7 +179,7 @@ hr {
 }
 
 /**Bouttons**/
-/* line 101, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 104, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -191,7 +196,7 @@ button {
   border-radius: 15px;
 }
 
-/* line 117, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 120, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonSup {
   margin-bottom: 10px;
   margin-right: 10px;
@@ -203,12 +208,12 @@ button {
   opacity: 1;
 }
 
-/* line 126, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 129, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonSup:hover {
   opacity: 0.5;
 }
 
-/* line 132, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 135, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonLink, .buttonAdd, .buttonAddBottom {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -216,7 +221,7 @@ button {
   text-decoration: none;
 }
 
-/* line 137, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 140, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonLink a, .buttonAdd a, .buttonAddBottom a {
   background-color: #33b7c0;
   color: #fff;
@@ -225,7 +230,7 @@ button {
   border-radius: 5px;
 }
 
-/* line 144, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 147, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonLink a:hover, .buttonAdd a:hover, .buttonAddBottom a:hover {
   opacity: 0.5;
   text-decoration: none;
@@ -237,24 +242,24 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 157, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 160, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonAdd {
   right: 2%;
   position: absolute;
   margin-top: 28px;
 }
 
-/* line 163, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 166, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonAddBottom {
   margin-left: 3%;
 }
 
-/* line 167, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 170, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .formHead {
   display: flex;
 }
 
-/* line 172, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 175, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .button {
   margin-bottom: 10px;
   margin-right: 10px;
@@ -266,7 +271,7 @@ button {
   border-radius: 5px;
 }
 
-/* line 184, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 187, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .button:hover {
   opacity: 0.5;
   -webkit-transition: all 0.2s ease-in-out;
@@ -275,7 +280,7 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 192, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 195, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form button:hover, .form button:active, .form button:focus {
   background: #0cf090;
   -webkit-transition: all 0.2s ease-in-out;
@@ -285,7 +290,7 @@ button {
 }
 
 /**Checkbox**/
-/* line 203, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 206, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form label {
   width: 150px;
   display: inline-block !important;
@@ -293,7 +298,7 @@ button {
   margin: 0 !important;
 }
 
-/* line 209, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 212, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form input {
   display: inline-block !important;
   width: 3% !important;
@@ -301,7 +306,7 @@ button {
 }
 
 /**Les Tableaux**/
-/* line 220, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 223, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel {
   margin-top: 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -309,7 +314,7 @@ button {
   border-style: none;
 }
 
-/* line 227, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 230, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading {
   font-size: 25px;
   font-weight: lighter;
@@ -318,7 +323,7 @@ button {
   padding: 5px;
 }
 
-/* line 233, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 236, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a {
   color: #ffffff;
   font-weight: lighter;
@@ -326,7 +331,7 @@ button {
   margin-left: 15px;
 }
 
-/* line 238, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 241, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a:hover {
   text-decoration: none;
   text-shadow: 0px 0px 10px #fff;
@@ -336,42 +341,42 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 249, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 252, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 table.dataTable {
   border-radius: 5px;
   box-shadow: 10px 10px 5px #888888;
 }
 
-/* line 255, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 258, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 thead {
   background-color: #33b7c0;
   color: #fff;
 }
 
-/* line 260, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 263, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .table {
   width: 95%;
   margin: auto;
 }
 
-/* line 264, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 267, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .table td {
   border: 1px solid #ddd !important;
 }
 
-/* line 270, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 273, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 section .row {
   margin: 20px;
 }
 
-/* line 274, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 277, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .container:before, .container:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 282, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 285, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #tableau_lengh label {
   margin-left: 2.5% !important;
   width: 45% !important;
