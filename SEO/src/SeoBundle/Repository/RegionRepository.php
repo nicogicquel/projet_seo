@@ -10,4 +10,5 @@ namespace SeoBundle\Repository;
  */
 class RegionRepository extends \Doctrine\ORM\EntityRepository
 {
+	
 }

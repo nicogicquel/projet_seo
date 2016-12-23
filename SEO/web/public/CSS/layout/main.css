@@ -1,4 +1,25 @@
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+h1 {
+  margin-left: 3%;
+}
+
+/* line 4, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+h2 {
+  margin-left: 3%;
+}
+
+/* line 8, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+table {
+  margin-left: 3%;
+}
+
+/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+hr {
+  border-color: #cccccc;
+}
+
+/**Les Formulaires**/
+/* line 18, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form {
   position: relative;
   z-index: 1;
@@ -11,7 +32,7 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 29, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -24,8 +45,71 @@
   font-size: 14px;
 }
 
-/* line 23, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form button {
+/* line 41, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+/* line 45, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+/* line 50, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form .register-form {
+  display: none;
+}
+
+/* line 56, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#seobundle_form label, #userbundle_form label, #seobundle_form_nomCamping label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* line 61, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#seobundle_form input, #userbundle_form input, #seobundle_form_nomCamping input {
+  display: block;
+  border-radius: 5px;
+  background-color: #ffc;
+  opacity: 2;
+  width: 210px;
+}
+
+/* line 69, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#seobundle_form select, #userbundle_form select, #seobundle_form_nomCamping select {
+  border-radius: 5px;
+  padding: 5px;
+  width: 210px;
+}
+
+/**Page Login**/
+/* line 79, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+/* line 86, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.bg {
+  background: url(../img/login.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/**Bouttons**/
+/* line 101, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -41,54 +125,7 @@
   border-radius: 15px;
 }
 
-/* line 38, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-
-/* line 42, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-/* line 47, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form .register-form {
-  display: none;
-}
-
-/* line 51, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.form button:hover, .form button:active, .form button:focus {
-  background: #0cf090;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-/* line 62, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-
-/* line 69, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.bg {
-  background: url(../img/login.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-
-/* line 81, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 117, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonSup {
   margin-bottom: 10px;
   margin-right: 10px;
@@ -100,12 +137,12 @@
   opacity: 1;
 }
 
-/* line 90, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 126, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonSup:hover {
   opacity: 0.5;
 }
 
-/* line 96, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 132, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonLink {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -113,7 +150,7 @@
   text-decoration: none;
 }
 
-/* line 101, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 137, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonLink a {
   background-color: #33b7c0;
   color: #fff;
@@ -122,7 +159,7 @@
   border-radius: 5px;
 }
 
-/* line 108, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 144, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonLink a:hover {
   opacity: 0.5;
   text-decoration: none;
@@ -134,7 +171,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* line 121, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 157, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .button {
   margin-bottom: 10px;
   margin-right: 10px;
@@ -146,7 +183,7 @@
   border-radius: 5px;
 }
 
-/* line 133, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 169, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .button:hover {
   opacity: 0.5;
   -webkit-transition: all 0.2s ease-in-out;
@@ -155,7 +192,33 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* line 140, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 177, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.form button:hover, .form button:active, .form button:focus {
+  background: #0cf090;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/**Checkbox**/
+/* line 188, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.checkbox_form label {
+  width: 150px;
+  display: inline-block !important;
+  width: 97% !important;
+  margin: 0 !important;
+}
+
+/* line 194, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.checkbox_form input {
+  display: inline-block !important;
+  width: 3% !important;
+  margin: 0 !important;
+}
+
+/**Les Tableaux**/
+/* line 205, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel {
   margin-top: 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -163,7 +226,7 @@
   border-style: none;
 }
 
-/* line 147, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 212, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading {
   font-size: 25px;
   font-weight: lighter;
@@ -172,7 +235,7 @@
   padding: 5px;
 }
 
-/* line 153, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 218, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a {
   color: #ffffff;
   font-weight: lighter;
@@ -180,7 +243,7 @@
   margin-left: 15px;
 }
 
-/* line 158, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 223, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a:hover {
   text-decoration: none;
   text-shadow: 0px 0px 10px #fff;
@@ -190,76 +253,45 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* line 169, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-table {
+/* line 234, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+table.dataTable {
   border-radius: 5px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
-/* line 173, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 240, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 thead {
   background-color: #33b7c0;
   color: #fff;
 }
 
-/* line 178, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 245, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .table {
   width: 95%;
   margin: auto;
-  border-radius: 50px;
 }
 
-/* line 182, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 249, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .table td {
   border: 1px solid #ddd !important;
 }
 
-/* line 188, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 255, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 section .row {
   margin: 20px;
 }
 
-/* line 192, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 259, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .container:before, .container:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 199, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-#seobundle_form label, #userbundle_form label {
-  display: block;
-}
-
-/* line 202, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-#seobundle_form input, #userbundle_form input {
-  display: block;
-  border-radius: 5px;
-  background-color: #ffc;
-  opacity: 2;
-  width: 210px;
-}
-
-/* line 210, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-#seobundle_form select, #userbundle_form select {
-  border-radius: 5px;
-  padding: 5px;
-  width: 210px;
-}
-
-/* line 217, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.checkbox_form {
-  display: flex;
-}
-
-/* line 219, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.checkbox_form label {
-  width: 150px;
-}
-
-/* line 222, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
-.checkbox_form input {
-  width: 10px !important;
-  margin: 2px;
+/* line 267, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#tableau_lengh label {
+  margin-left: 2.5% !important;
+  width: 45% !important;
 }
 
 /*# sourceMappingURL=../../CSS/layout/main.map */

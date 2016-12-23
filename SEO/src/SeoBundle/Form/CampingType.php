@@ -4,10 +4,15 @@ namespace SeoBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityRepository;
+use SeoBundle\Entity\Region;
+
 
 class CampingType extends AbstractType
 {
@@ -30,7 +35,7 @@ class CampingType extends AbstractType
                   'label'=>'Département:',
                   'required'    => false,
                   'placeholder' => 'Choisissez un département'))
-                ->add('ville',EntityType::class,array(  
+                /*->add('ville',EntityType::class,array(  
                     'class'=>'SeoBundle:Ville',
                     'query_builder'=> function(EntityRepository $er){
                         return $er->createQueryBuilder('v')
@@ -39,8 +44,50 @@ class CampingType extends AbstractType
                     'choice_label'=>'nom',
                     'label'=>'Ville:',
                     'required'    => false,
-                    'placeholder' => 'Choisissez une ville'));
-    }
+                    'placeholder' => 'Choisissez une ville'))*/
+                ->add('ville',VilleType::class);
+
+        $formModifier = function (FormInterface $form, Region $region = null) {
+        $departement = null === $region ? array() : $region->getDepartements();
+
+        $form->add('departement', EntityType::class,array(
+                  'class'=>'SeoBundle:Departement',
+                  'choices'     => $departement,
+                  'choice_label' => 'nom',
+                  'label'=>'Département:',
+                  'required'    => false,
+                  'placeholder' => 'Choisissez un département'));
+      
+      };
+
+      $builder->addEventListener(
+      FormEvents::PRE_SET_DATA,
+      function (FormEvent $event) use ($formModifier) {
+        
+        $data = $event->getData();
+
+        $formModifier($event->getForm(), $data->getRegion());
+      }
+    );
+
+      $builder->get('region')->addEventListener(
+      FormEvents::POST_SUBMIT,
+      function (FormEvent $event) use ($formModifier) {
+        // It's important here to fetch $event->getForm()->getData(), as
+        // $event->getData() will get you the client data (that is, the ID)
+        $region = $event->getForm()->getData();
+
+        // since we've added the listener to the child, we'll have to pass on
+        // the parent to the callback functions!
+        $formModifier($event->getForm()->getParent(), $region);
+      }
+    );
+    
+    //$builder->add('enregistrer','submit');
+  }
+
+
+  
     
     /**
      * {@inheritdoc}

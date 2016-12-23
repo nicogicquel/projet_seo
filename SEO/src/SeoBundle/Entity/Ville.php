@@ -40,6 +40,12 @@ class Ville
      */
     private $campings;
 
+    /**
+     *@ORM\ManyToOne(targetEntity="Departement",inversedBy="villes",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="departement_id", referencedColumnName="id")
+     */
+    private $departement;
+
 
     public function __construct() {
         $this->sites = new ArrayCollection();
@@ -148,5 +154,29 @@ class Ville
     public function getCampings()
     {
         return $this->campings;
+    }
+
+    /**
+     * Set departement
+     *
+     * @param \SeoBundle\Entity\Departement $departement
+     *
+     * @return Ville
+     */
+    public function setDepartement(\SeoBundle\Entity\Departement $departement = null)
+    {
+        $this->departement = $departement;
+
+        return $this;
+    }
+
+    /**
+     * Get departement
+     *
+     * @return \SeoBundle\Entity\Departement
+     */
+    public function getDepartement()
+    {
+        return $this->departement;
     }
 }

@@ -1,15 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block section %}
-    <h1>Liste des Campings</h1>
+    <div class="formHead">
+        <h1>Liste des Campings</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('camping_new') }}">Ajouter un nouveau camping</a>
+        </div>
+    </div>
 
-    
     <table class='table'>
         <thead>
             <tr>
                 <th>Nom</th>
-                <th>Département</th>
                 <th>Région</th>
+                <th>Département</th>
                 <th>Ville</th>
                 <th>Actions</th>
             </tr>
@@ -18,15 +22,15 @@
         {% for camping in campings %}
             <tr>
                 <td><a href="{{ path('camping_show', { 'id': camping.id }) }}">{{ camping.nomCamping }}</a></td>
-                {% if camping.departement == NULL %}
-                <td></td>
-                {% else %}
-                <td>{{ camping.departement.nom }}</td>
-                {% endif %}
                 {% if camping.region == NULL %}
                 <td></td>
                 {% else %}
                 <td>{{ camping.region.nom }}</td>
+                {% endif %}
+                {% if camping.departement == NULL %}
+                <td></td>
+                {% else %}
+                <td>{{ camping.departement.nom }}</td>
                 {% endif %}
                 {% if camping.ville == NULL %}
                 <td></td>
@@ -51,9 +55,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('camping_new') }}">Ajouter un nouveau camping</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('camping_new') }}">Ajouter un nouveau camping</a>
+    </div>
 {% endblock %}

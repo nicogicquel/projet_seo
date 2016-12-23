@@ -3,6 +3,7 @@
 namespace SeoBundle\Controller;
 
 use SeoBundle\Entity\Camping;
+use SeoBundle\Form\CampingType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -144,6 +145,28 @@ class CampingController extends Controller
             ->getForm()
         ;
     }
+
+    public function rempliAction()
+    {
+        $request = $this->getRequest();
+ 
+        if($request->isXmlHttpRequest()) // pour vérifier la présence d'une requete Ajax
+        {
+            $id = $request->request->get('id');
+            $selecteur = $request->request->get('select');
+           
+        if ($id != null)
+        {  
+            $data = $this->getDoctrine()
+                        ->getManager()
+                        ->getRepository('sdzBikindBundle:'.$selecteur)
+                        ->$selecteur($id);
+             
+            return new JsonResponse($data);
+        }
+  }
+  return new Response("Nonnn ....");       
+}
 
     
 }

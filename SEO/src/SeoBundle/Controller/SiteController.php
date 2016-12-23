@@ -88,7 +88,7 @@ class SiteController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('site_edit', array('id' => $site->getId()));
+            return $this->redirectToRoute('site_index');
         }
 
         return $this->render('site/edit.html.twig', array(

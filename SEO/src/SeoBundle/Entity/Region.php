@@ -39,10 +39,15 @@ class Region
      */
     private $campings;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Departement",mappedBy="region",cascade={"persist","remove","merge"})
+     */
+    private $departements;
 
     public function __construct() {
         $this->sites = new ArrayCollection();
         $this->campings = new ArrayCollection();
+        $this->departements = new ArrayCollection();
     }
 
     /**
@@ -145,5 +150,39 @@ class Region
     public function getCampings()
     {
         return $this->campings;
+    }
+
+    /**
+     * Add departement
+     *
+     * @param \SeoBundle\Entity\Departement $departement
+     *
+     * @return Region
+     */
+    public function addDepartement(\SeoBundle\Entity\Departement $departement)
+    {
+        $this->departements[] = $departement;
+
+        return $this;
+    }
+
+    /**
+     * Remove departement
+     *
+     * @param \SeoBundle\Entity\Departement $departement
+     */
+    public function removeDepartement(\SeoBundle\Entity\Departement $departement)
+    {
+        $this->departements->removeElement($departement);
+    }
+
+    /**
+     * Get departements
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDepartements()
+    {
+        return $this->departements;
     }
 }

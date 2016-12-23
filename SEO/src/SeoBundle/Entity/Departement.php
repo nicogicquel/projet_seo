@@ -46,6 +46,17 @@ class Departement
      */
     private $campings;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Ville",mappedBy="departement",cascade={"persist","remove","merge"})
+     */
+    private $villes;
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Region",inversedBy="departements",cascade={"persist","merge"})
+     *@ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     */
+    private $region;
+
 
     public function __construct() {
         $this->sites = new ArrayCollection();
@@ -175,5 +186,63 @@ class Departement
     public function getCampings()
     {
         return $this->campings;
+    }
+
+    /**
+     * Add ville
+     *
+     * @param \SeoBundle\Entity\Ville $ville
+     *
+     * @return Departement
+     */
+    public function addVille(\SeoBundle\Entity\Ville $ville)
+    {
+        $this->villes[] = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Remove ville
+     *
+     * @param \SeoBundle\Entity\Ville $ville
+     */
+    public function removeVille(\SeoBundle\Entity\Ville $ville)
+    {
+        $this->villes->removeElement($ville);
+    }
+
+    /**
+     * Get villes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVilles()
+    {
+        return $this->villes;
+    }
+
+    /**
+     * Set region
+     *
+     * @param \SeoBundle\Entity\Region $region
+     *
+     * @return Departement
+     */
+    public function setRegion(\SeoBundle\Entity\Region $region = null)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return \SeoBundle\Entity\Region
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 }

@@ -10,4 +10,12 @@ namespace SeoBundle\Repository;
  */
 class VilleRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findVille($departement)    {
+
+	return $this->createQueryBuilder('v')      
+            ->where('v.departemnt= :departement')
+            ->setParameter('departement', $departement)
+ 			->getQuery()
+          	->getArrayResult();
+	}
 }

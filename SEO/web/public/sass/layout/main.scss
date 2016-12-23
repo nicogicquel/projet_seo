@@ -1,3 +1,20 @@
+h1{
+    margin-left: 3%;
+}
+h2{
+    margin-left: 3%;
+}
+
+table{
+    margin-left: 3%;
+}
+
+hr{
+    border-color: #cccccc;
+}
+
+/**Les Formulaires**/
+
 .form {
     position: relative;
     z-index: 1;
@@ -20,21 +37,7 @@
         box-sizing: border-box;
         font-size: 14px;
     }
-    button {
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        outline: 0;
-        background: #0AC375;
-        width: 100%;
-        border: 0;
-        padding: 15px;
-        color: #FFFFFF;
-        font-size: 14px;
-        -webkit-transition: all 0.3 ease;
-        transition: all 0.3 ease;
-        cursor: pointer;
-        border-radius: 15px;
-    }
+
     .message {
         margin: 15px 0 0;
         color: #b3b3b3;
@@ -48,16 +51,30 @@
         display: none;
     }
 }
-.form button:hover,.form button:active,.form button:focus {
-    background: #0cf090;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+
+#seobundle_form, #userbundle_form, #seobundle_form_nomCamping {
+    label{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input{
+        display: block;
+        border-radius: 5px;
+        background-color: #ffc;
+        opacity: 2;
+        width: 210px;
+        
+    }
+    select{
+        border-radius: 5px;
+        padding: 5px;
+        width: 210px;
+    }
+    
 }
 
-
-
+/**Page Login**/
 
 .login-page {
     width: 360px;
@@ -78,6 +95,25 @@
     z-index: -1;
 
 }
+
+/**Bouttons**/
+
+button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #0AC375;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+
 .buttonSup{
     margin-bottom: 10px;
     margin-right: 10px;
@@ -93,7 +129,7 @@
 
 }
 
-.buttonLink{
+.buttonLink, .buttonAdd, .buttonAddBottom {
     margin-top: 10px;
     margin-bottom: 20px;
     margin-right: 10px;
@@ -118,6 +154,21 @@
     }
 }
 
+.buttonAdd{
+    right: 2%;
+    position: absolute;
+    margin-top: 28px;
+}
+
+.buttonAddBottom{
+    margin-left: 3%;
+}
+
+.formHead{
+    display: flex;
+
+}
+
 .button{
   margin-bottom: 10px;
   margin-right: 10px;
@@ -137,6 +188,35 @@
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #0cf090;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+/**Checkbox**/
+
+.checkbox_form{
+    label{
+        width: 150px;
+        display: inline-block !important;
+        width: 97% !important;
+        margin: 0 !important;
+    }
+    input{
+        display: inline-block !important;
+        width: 3% !important;
+        margin: 0 !important;
+    }
+    
+}
+
+
+/**Les Tableaux**/
+
 .panel{
     margin-top: 50px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -166,8 +246,10 @@
     }
 }
 
-table{
+table.dataTable{
     border-radius: 5px;
+    box-shadow: 10px 10px 5px #888888;
+
 }
 
 thead{
@@ -178,7 +260,7 @@ thead{
 .table {
     width: 95%;
     margin: auto;
-    border-radius: 50px;
+    
     td{
        border: 1px solid #ddd !important; 
     }
@@ -195,34 +277,13 @@ section .row{
     clear: both;
 }
 
-#seobundle_form, #userbundle_form {
+
+#tableau_lengh{
     label{
-        display:block;
+        margin-left:2.5% !important;
+        width: 45% !important;
     }
-    input{
-        display:block;
-        border-radius: 5px;
-        background-color: #ffc;
-        opacity: 2;
-        width: 210px;
-        
-    }
-    select{
-        border-radius: 5px;
-        padding: 5px;
-        width: 210px;
-    }
-    
 }
-.checkbox_form{
-    display:flex;
-    label{
-        width: 150px;
-    }
-    input{
-       width: 10px !important;
-       margin: 2px;
-    }
-    
-}
+
+
 
