@@ -11,18 +11,6 @@ class LoadRole extends AbstractFixture implements OrderedFixtureInterface
 {
 	public function load (ObjectManager $manager)
 	{
-		
-
-		/*$name=['utilisateur','administrateur'];
-		$role=['ROLE_USER', 'ROLE_ADMIN'];
-		for ($i=0; $i < count($name); $i++) { 
-			$roles[$i] = new Role();
-			$roles[$i]->setName($name[$i]);
-			$roles[$i]->setRole($role[$i]);
-			$manager->persist($roles);
-
-		}
-		$manager->flush();*/
 
 		$role_user = new Role();
         $role_user->setName('Utilisateur');
@@ -42,8 +30,6 @@ class LoadRole extends AbstractFixture implements OrderedFixtureInterface
 
 	public function getOrder()
     {
-        // the order in which fixtures will be loaded
-        // the lower the number, the sooner that this fixture is loaded
         return 1;
     }
 

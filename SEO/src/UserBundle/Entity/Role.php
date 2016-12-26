@@ -45,7 +45,6 @@ class Role implements RoleInterface
     public function __construct()
     {
         $this->users = new ArrayCollection();
-        $this->createdAt = new \DateTime();
     }
 
 
