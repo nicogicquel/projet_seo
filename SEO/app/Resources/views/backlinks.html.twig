@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/CSS/dataTable.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/CSS/maxcdn.bootstrapcdn.min.css') }}">
+        <link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/CSS/style.css') }}" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            {% block header %}
+                <div class="header_container">
+                    <div class="logo_container">
+                        <a class="logo"><img src="{{ asset('public/img/logo.png') }}"></a>
+                    </div>
+                    <div class="header_title">
+                        <h1>Gestion des Backlinks</h1>
+                    </div>
+                </div>
+            {% endblock %}
+
+    <nav class="navbar ">   
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="inactive"><a a href="{{ path('index') }}">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Url</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('site_index') }}">Index</a></li>
+                        <li><a href="{{ path('site_new') }}">Ajouter une url</a></li>
+                    </ul>
+                <li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Campings</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('camping_index') }}">Index</a></li>
+                        <li><a href="{{ path('camping_new') }}">Ajouter un camping</a></li>
+                    </ul>
+                <li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Régions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('region_index') }}">Index</a></li>
+                        <li><a href="{{ path('region_new') }}">Ajouter une région</a></li>
+                    </ul>
+                <li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Départements</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('departement_index') }}">Index</a></li>
+                        <li><a href="{{ path('departement_new') }}">Ajouter un département</a></li>
+                    </ul>
+                <li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Statuts</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('statut_index') }}">Index</a></li>
+                        <li><a href="{{ path('statut_new') }}">Ajouter un statut</a></li>
+                    </ul>
+                <li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('topical_index') }}">Index</a></li>
+                        <li><a href="{{ path('topical_new') }}">Ajouter un topic</a></li>
+                    </ul>
+                <li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Langues</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('langue_index') }}">Index</a></li>
+                        <li><a href="{{ path('langue_new') }}">Ajouter une langue</a></li>
+                    </ul>
+                <li> 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Types</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('type_index') }}">Index</a></li>
+                        <li><a href="{{ path('type_new') }}">Ajouter un type</a></li>
+                    </ul>
+                <li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block flashbag %}
+        {% for flash in app.session.flashbag.get('success') %}
+            <div class="alert alert-success">
+                <p align="center">{{ flash }}</p>
+            </div>
+        {% endfor %}
+        {% for flash in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger">
+                <p align="center">{{ flash }}</p>
+            </div>
+        {% endfor %}
+        {% for flash in app.session.flashbag.get('notice') %}
+            <div class="flash notice">
+                <p align="center">{{ flash }}</p>
+            </div>
+        {% endfor %}
+    {% endblock %}
+
+    {% block section %}
+    {% endblock %}
+    {% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('public/script/jquery-3.1.0.min.js') }}"></script>
+    <script src="{{ asset('public/script/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/script/dataTable.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/script/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/script/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/script/dynamicForm.js') }}"></script>
+{% endblock %}
+    </body>
+</html>

@@ -17,4 +17,47 @@
   -webkit-transition: 0.2s;
 }
 
+/* line 19, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar-inverse .navbar-nav > .open > a {
+  background-color: #f59331;
+  color: #ffffff;
+}
+
+/* line 24, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #ffffff;
+  color: #f59331 !important;
+}
+
+/* line 29, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown-menu {
+  border-style: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 0px;
+}
+
+/* line 36, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown-menu li a {
+  height: 50px;
+  line-height: 45px;
+  color: #f59331 !important;
+}
+
+/* line 42, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown-menu > li > a:hover {
+  background-color: #80577c;
+  color: #f59331;
+  font-weight: bold;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 52, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown .open {
+  background-color: #f59331;
+}
+
 /*# sourceMappingURL=../../CSS/layout/menu.map */

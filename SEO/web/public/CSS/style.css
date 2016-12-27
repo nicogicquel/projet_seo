@@ -4,33 +4,64 @@ Theme URI:
 Author: France Com
 Author URI: http://www.francecom.fr/
 */
+/* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/accueil.scss */
+.block_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin-top: 175px;
+}
+
+/* line 6, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/accueil.scss */
+.block_container .accueil_block1 {
+  width: 25%;
+  height: 40%;
+  margin: 10% auto;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/accueil.scss */
+.block_container .accueil_block1 img:hover {
+  opacity: 0.75;
+}
+
+/* line 16, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/accueil.scss */
+.block_container .accueil_block1 img {
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_container {
   height: 150px;
   display: flex;
 }
 
-/* line 5, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 6, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .logo_container {
   width: 35%;
   left: 0px;
   background-color: white;
 }
 
-/* line 11, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .logo img {
   height: 150px;
   width: 100%;
 }
 
-/* line 16, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 17, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title {
   text-align: center;
   background-color: white;
   width: 65%;
 }
 
-/* line 20, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title h1 {
   font-size: 100px;
   margin: 0.2em;
@@ -38,11 +69,18 @@ Author URI: http://www.francecom.fr/
 }
 
 @media (max-width: 1380px) {
-  /* line 20, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+  /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
   .header_title h1 {
-    font-size: 1.7em;
+    font-size: 6em;
     margin: 0.23em;
   }
+}
+
+/* line 33, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+#endHeader {
+  background-color: #f59331;
+  height: 10px;
+  margin: 0 0 0 0;
 }
 
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
@@ -62,6 +100,49 @@ Author URI: http://www.francecom.fr/
   color: #f59331 !important;
   transition: 0.2s;
   -webkit-transition: 0.2s;
+}
+
+/* line 19, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.navbar-inverse .navbar-nav > .open > a {
+  background-color: #f59331;
+  color: #ffffff;
+}
+
+/* line 24, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #ffffff;
+  color: #f59331 !important;
+}
+
+/* line 29, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown-menu {
+  border-style: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 0px;
+}
+
+/* line 36, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown-menu li a {
+  height: 50px;
+  line-height: 45px;
+  color: #f59331 !important;
+}
+
+/* line 42, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown-menu > li > a:hover {
+  background-color: #80577c;
+  color: #f59331;
+  font-weight: bold;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 52, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+.dropdown .open {
+  background-color: #f59331;
 }
 
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */

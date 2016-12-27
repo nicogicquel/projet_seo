@@ -4,27 +4,27 @@
   display: flex;
 }
 
-/* line 5, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 6, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .logo_container {
   width: 35%;
   left: 0px;
   background-color: white;
 }
 
-/* line 11, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .logo img {
   height: 150px;
   width: 100%;
 }
 
-/* line 16, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 17, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title {
   text-align: center;
   background-color: white;
   width: 65%;
 }
 
-/* line 20, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+/* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title h1 {
   font-size: 100px;
   margin: 0.2em;
@@ -32,11 +32,18 @@
 }
 
 @media (max-width: 1380px) {
-  /* line 20, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+  /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
   .header_title h1 {
-    font-size: 1.7em;
+    font-size: 6em;
     margin: 0.23em;
   }
+}
+
+/* line 33, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+#endHeader {
+  background-color: #f59331;
+  height: 10px;
+  margin: 0 0 0 0;
 }
 
 /*# sourceMappingURL=../../CSS/layout/header.map */

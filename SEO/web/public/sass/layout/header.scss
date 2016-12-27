@@ -2,6 +2,7 @@
 	height: 150px;
 	display:flex;
 }
+
 .logo_container {
 	width: 35%;
 	left: 0px;
@@ -19,12 +20,18 @@
 	width: 65%;
 	h1 {
 		font-size: 100px;
-		margin:0.2em;
+		margin: 0.2em;
 		color:#929294;
 		@media (max-width: 1380px) {
-			font-size: 1.7em;
+			font-size: 6em;
 			margin:0.23em;
 		}
 
 	}
+}
+
+#endHeader{
+	background-color:#f59331;
+	height: 10px;
+	margin: 0 0 0 0;
 }

@@ -35,16 +35,6 @@ class CampingType extends AbstractType
                   'label'=>'Département:',
                   'required'    => false,
                   'placeholder' => 'Choisissez un département'))
-                /*->add('ville',EntityType::class,array(  
-                    'class'=>'SeoBundle:Ville',
-                    'query_builder'=> function(EntityRepository $er){
-                        return $er->createQueryBuilder('v')
-                                  ->orderBy('v.nom', 'ASC');
-                    },
-                    'choice_label'=>'nom',
-                    'label'=>'Ville:',
-                    'required'    => false,
-                    'placeholder' => 'Choisissez une ville'))*/
                 ->add('ville',VilleType::class, array (
                   'label' => false ));
 
