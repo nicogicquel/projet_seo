@@ -1,9 +1,52 @@
-/*
-Theme Name: Theme Grangette
-Theme URI: 
-Author: France Com
-Author URI: http://www.francecom.fr/
-*/
+@font-face {
+  font-family: 'projet_seo';
+  src: url("fonts/projet_seo.eot?9e5bif");
+  src: url("fonts/projet_seo.eot?9e5bif#iefix") format("embedded-opentype"), url("fonts/projet_seo.ttf?9e5bif") format("truetype"), url("fonts/projet_seo.woff?9e5bif") format("woff"), url("fonts/projet_seo.svg?9e5bif#projet_seo") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 12, C:/wamp/www/projet_seo/SEO/web/public/sass/elements/fonts.scss */
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'projet_seo' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 27, C:/wamp/www/projet_seo/SEO/web/public/sass/elements/fonts.scss */
+.icon-settings:before {
+  content: "\e900";
+  color: #a7a9ac;
+}
+
+/*.icon-settings .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-settings .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-settings .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-settings .path5:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}*/
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/accueil.scss */
 .block_container {
   height: 100%;
@@ -83,18 +126,29 @@ Author URI: http://www.francecom.fr/
   margin: 0 0 0 0;
 }
 
+/* line 39, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
+.icon-settings {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 1;
+}
+
 /* line 1, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .navbar {
   background-color: #f59331;
+  color: #ffffff;
   border: none;
 }
 
-/* line 7, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 8, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .navbar-nav a {
   color: #fff !important;
 }
 
-/* line 9, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 10, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .navbar-nav a:hover {
   background-color: #fff !important;
   color: #f59331 !important;
@@ -102,19 +156,19 @@ Author URI: http://www.francecom.fr/
   -webkit-transition: 0.2s;
 }
 
-/* line 19, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 20, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .navbar-inverse .navbar-nav > .open > a {
   background-color: #f59331;
   color: #ffffff;
 }
 
-/* line 24, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 25, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #ffffff;
   color: #f59331 !important;
 }
 
-/* line 29, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 30, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .dropdown-menu {
   border-style: none;
   padding-top: 0px;
@@ -122,14 +176,14 @@ Author URI: http://www.francecom.fr/
   border-radius: 0px;
 }
 
-/* line 36, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 37, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .dropdown-menu li a {
   height: 50px;
   line-height: 45px;
   color: #f59331 !important;
 }
 
-/* line 42, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 43, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .dropdown-menu > li > a:hover {
   background-color: #80577c;
   color: #f59331;
@@ -140,7 +194,7 @@ Author URI: http://www.francecom.fr/
   transition: all 0.2s ease-in-out;
 }
 
-/* line 52, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
+/* line 53, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/menu.scss */
 .dropdown .open {
   background-color: #f59331;
 }

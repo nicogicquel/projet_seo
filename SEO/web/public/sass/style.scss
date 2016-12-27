@@ -1,16 +1,9 @@
-/*
-Theme Name: Theme Grangette
-Theme URI: 
-Author: France Com
-Author URI: http://www.francecom.fr/
-*/
 
-@import "compass"; // pour utiliser la bibliothèque compass
-// @import "icons/*.png"; // sprite
-// $icons-sprite-dimensions: true; // appelle de la mixin comprend les dimensions
+
+@import "compass"; 
 
 @import "var/variables";
-
+@import "elements/fonts";
 
 
 @import "layout/accueil";
