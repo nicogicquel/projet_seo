@@ -165,6 +165,7 @@ button {
 
 .buttonAddBottom{
     margin-left: 3%;
+    margin-top: 20px;
 }
 
 .formHead{
@@ -198,6 +199,37 @@ button {
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+}
+
+.settings_accueil{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 1;
+}
+
+.settings_backlinks{
+    position: absolute;
+    top: 155px;
+    right: 50px;
+    z-index: 1;
+    font-size: 25px;
+}
+
+.btn-lg{
+    padding: 7px 8px 4px 7px;
+}
+
+.btn-info{
+    background-color: #f59331;
+    border-color: #f59331;
+    &:hover{
+        background-color: #f59331;
+        opacity: 0.8;
+    }
+    &:focus{
+        background-color: #f59331;
+    }
 }
 
 /**Checkbox**/

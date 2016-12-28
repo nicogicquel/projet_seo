@@ -1,12 +1,17 @@
 {% extends 'backlinks.html.twig' %}
 
 {% block section %}
-    <h1>Topicals list</h1>
+
+    <div class="formHead">
+        <h1>Liste des topics</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('topical_new') }}">Ajouter un nouveau topic</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Actions</th>
             </tr>
@@ -14,15 +19,14 @@
         <tbody>
         {% for topical in topicals %}
             <tr>
-                <td><a href="{{ path('topical_show', { 'id': topical.id }) }}">{{ topical.id }}</a></td>
-                <td>{{ topical.nom }}</td>
+                <td><a href="{{ path('topical_edit', { 'id': topical.id }) }}">{{ topical.nom }}</a></td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('topical_show', { 'id': topical.id }) }}">show</a>
+                            <a href="{{ path('topical_edit', { 'id': topical.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('topical_edit', { 'id': topical.id }) }}">edit</a>
+                            <a href="{{ path('topical_edit', { 'id': topical.id }) }}">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -31,9 +35,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('topical_new') }}">Create a new topical</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('topical_new') }}">Ajouter un nouveau topic</a>
+    </div>
 {% endblock %}

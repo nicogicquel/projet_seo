@@ -1,12 +1,16 @@
 {% extends 'backlinks.html.twig' %}
 
 {% block section %}
-    <h1>Departements list</h1>
+    <div class="formHead">
+        <h1>Liste des départements</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('departement_new') }}">Ajouter un nouveau département</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Code</th>
                 <th>Nom</th>
                 <th>Actions</th>
@@ -15,16 +19,15 @@
         <tbody>
         {% for departement in departements %}
             <tr>
-                <td><a href="{{ path('departement_show', { 'id': departement.id }) }}">{{ departement.id }}</a></td>
                 <td>{{ departement.code }}</td>
-                <td>{{ departement.nom }}</td>
+                <td><a href="{{ path('departement_show', { 'id': departement.id }) }}">{{ departement.nom }}</a></td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('departement_show', { 'id': departement.id }) }}">show</a>
+                            <a href="{{ path('departement_edit', { 'id': departement.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('departement_edit', { 'id': departement.id }) }}">edit</a>
+                            <a href="{{ path('departement_edit', { 'id': departement.id }) }}">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -33,9 +36,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('departement_new') }}">Create a new departement</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('departement_new') }}">Ajouter un nouveau département</a>
+    </div>
 {% endblock %}

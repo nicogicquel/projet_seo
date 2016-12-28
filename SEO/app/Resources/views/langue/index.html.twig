@@ -1,12 +1,17 @@
 {% extends 'backlinks.html.twig' %}
 
 {% block section %}
-    <h1>Langues list</h1>
+    
+    <div class="formHead">
+        <h1>Liste des langues</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('langue_new') }}">Ajouter une nouvelle langue</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Actions</th>
             </tr>
@@ -14,15 +19,14 @@
         <tbody>
         {% for langue in langues %}
             <tr>
-                <td><a href="{{ path('langue_show', { 'id': langue.id }) }}">{{ langue.id }}</a></td>
-                <td>{{ langue.nom }}</td>
+                <td><a href="{{ path('langue_edit', { 'id': langue.id }) }}">{{ langue.nom }}</a></td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('langue_show', { 'id': langue.id }) }}">show</a>
+                            <a href="{{ path('langue_show', { 'id': langue.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('langue_edit', { 'id': langue.id }) }}">edit</a>
+                            <a href="{{ path('langue_edit', { 'id': langue.id }) }}">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -31,9 +35,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('langue_new') }}">Create a new langue</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('langue_new') }}">Ajouter une nouvelle langue</a>
+    </div>
 {% endblock %}

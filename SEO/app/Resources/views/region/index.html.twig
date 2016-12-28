@@ -1,12 +1,17 @@
 {% extends 'backlinks.html.twig' %}
 
 {% block section %}
-    <h1>Regions list</h1>
+
+    <div class="formHead">
+        <h1>Liste des régions</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('region_new') }}">Ajouter une nouvelle région</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Actions</th>
             </tr>
@@ -14,15 +19,14 @@
         <tbody>
         {% for region in regions %}
             <tr>
-                <td><a href="{{ path('region_show', { 'id': region.id }) }}">{{ region.id }}</a></td>
-                <td>{{ region.nom }}</td>
+                <td><a href="{{ path('region_edit', { 'id': region.id }) }}">{{ region.nom }}</a></td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('region_show', { 'id': region.id }) }}">show</a>
+                            <a href="{{ path('region_edit', { 'id': region.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('region_edit', { 'id': region.id }) }}">edit</a>
+                            <a href="{{ path('region_edit', { 'id': region.id }) }}">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -31,9 +35,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('region_new') }}">Create a new region</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('region_new') }}">Ajouter une nouvelle région</a>
+    </div>
 {% endblock %}

@@ -86,6 +86,9 @@
             </ul>
         </div>
     </nav>
+    <a href="{{ path('user_index') }}" class="settings_backlinks btn-info btn-lg">
+        <span class="glyphicon glyphicon-cog"></span>
+    </a>
 
     {% block flashbag %}
         {% for flash in app.session.flashbag.get('success') %}

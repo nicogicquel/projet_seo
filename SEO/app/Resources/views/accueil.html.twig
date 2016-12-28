@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}Accueil{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('public/CSS/dataTable.min.css') }}">
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('public/CSS/maxcdn.bootstrapcdn.min.css') }}">
@@ -18,13 +18,15 @@
                         <a class="logo"><img src="{{ asset('public/img/logo.png') }}"></a>
                     </div>
                     <div class="header_title">
-                        <h1>SEO</h1>
+                        <h1 class="accueil_title">Outils SEO</h1>
                     </div>
 
                 </div>
                 <hr id='endHeader'>
-                
-                     <a href="#" class="icon-settings"></a>
+                <a href="{{ path('user_index') }}" class="settings_accueil btn-info btn-lg">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+                     
                 
             {% endblock %}
 

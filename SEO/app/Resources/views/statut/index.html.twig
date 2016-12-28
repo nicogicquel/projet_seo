@@ -1,12 +1,17 @@
 {% extends 'backlinks.html.twig' %}
 
 {% block section %}
-    <h1>Statuts list</h1>
+
+    <div class="formHead">
+        <h1>Liste des statuts</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('statut_new') }}">Ajouter un nouveau statut</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Actions</th>
             </tr>
@@ -14,15 +19,14 @@
         <tbody>
         {% for statut in statuts %}
             <tr>
-                <td><a href="{{ path('statut_show', { 'id': statut.id }) }}">{{ statut.id }}</a></td>
-                <td>{{ statut.nom }}</td>
+                <td><a href="{{ path('statut_edit', { 'id': statut.id }) }}">{{ statut.nom }}</a></td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('statut_show', { 'id': statut.id }) }}">show</a>
+                            <a href="{{ path('statut_edit', { 'id': statut.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('statut_edit', { 'id': statut.id }) }}">edit</a>
+                            <a href="{{ path('statut_edit', { 'id': statut.id }) }}">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -31,9 +35,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('statut_new') }}">Create a new statut</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('statut_new') }}">Ajouter un nouveau statut</a>
+    </div>
 {% endblock %}

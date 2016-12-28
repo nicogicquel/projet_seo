@@ -1,12 +1,17 @@
 {% extends 'backlinks.html.twig' %}
 
 {% block section %}
-    <h1>Types list</h1>
+
+    <div class="formHead">
+        <h1>Liste des types</h1>
+        <div class="buttonAdd">
+            <a href="{{ path('type_new') }}">Ajouter un nouveau type</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Actions</th>
             </tr>
@@ -14,15 +19,15 @@
         <tbody>
         {% for type in types %}
             <tr>
-                <td><a href="{{ path('type_show', { 'id': type.id }) }}">{{ type.id }}</a></td>
-                <td>{{ type.nom }}</td>
+                <td><a href="{{ path('type_edit', { 'id': type.id }) }}">{{ type.nom }}</a></td>
+
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('type_show', { 'id': type.id }) }}">show</a>
+                            <a href="{{ path('type_edit', { 'id': type.id }) }}">Modifier</a>
                         </li>
                         <li>
-                            <a href="{{ path('type_edit', { 'id': type.id }) }}">edit</a>
+                            <a href="{{ path('type_edit', { 'id': type.id }) }}">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -31,9 +36,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('type_new') }}">Create a new type</a>
-        </li>
-    </ul>
+    <div class="buttonAddBottom">
+        <a href="{{ path('type_new') }}">Ajouter un nouveau type</a>
+    </div>
 {% endblock %}
