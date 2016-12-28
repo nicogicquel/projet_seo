@@ -89,6 +89,7 @@ class SiteController extends Controller
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('site_index');
+            //return $this->redirect('javascript:history.go(-2)');
         }
 
         return $this->render('site/edit.html.twig', array(

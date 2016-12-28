@@ -36,7 +36,8 @@ class CampingType extends AbstractType
                   'required'    => false,
                   'placeholder' => 'Choisissez un département'))
                 ->add('ville',VilleType::class, array (
-                  'label' => false ));
+                  'label' => false,
+                  'required' => false ));
 
         $formModifier = function (FormInterface $form, Region $region = null) {
         $departement = null === $region ? array() : $region->getDepartements();
