@@ -1,5 +1,9 @@
 {% extends 'backlinks.html.twig' %}
 
+{% block title %}
+    {{ camping.nomCamping }}
+{% endblock %}
+
 {% block section %}
     <h1>Camping {{ camping.nomCamping }}</h1>
 
@@ -56,6 +60,8 @@
             </tr>
         </table>
     <hr id="separate">
+
+</table>
     <h1>Suggestions</h1>
     <br>
 
@@ -74,6 +80,7 @@
                 <th>Type</th>
                 <th>Difficultés</th>
                 <th>Infos</th>
+                <th>Liaison</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -120,6 +127,15 @@
                 {% endif %}
                 <td>{{ site.difficulte }}</td>
                 <td>{{ site.infos }}</td>
+                    <td>
+                        {% for campings in site.campings %}
+                        {% if campings.nomCamping == camping.nomCamping %}
+                            <p class="link"><span class="glyphicon glyphicon-ok"></span></p>
+                        {% else  %}   
+                            <p></p>
+                        {% endif %}
+                        {% endfor %}
+                    </td>
                 
                 <td>
                     <ul>

@@ -6,7 +6,10 @@ use SeoBundle\Entity\Camping;
 use SeoBundle\Form\CampingType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\ChoiceList\ChoiceListInterface;
+use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 
 /**
  * Camping controller.
@@ -74,12 +77,17 @@ class CampingController extends Controller
         $ville= $camping->getVille();
         $sites = $em->getRepository('SeoBundle:Site')->findSite($region, $departement, $ville);
         $deleteForm = $this->createDeleteForm($camping);
+        $editForm = $this->createForm('SeoBundle\Form\CampingType', $camping);
 
+        /*$options = $editForm->get('sites')->getConfig()->getOptions();
+        $choices = $options['choice_value']->getChoices();
+        var_dump($choices);*/
 
         return $this->render('camping/show.html.twig', array(
             'camping' => $camping,
             'delete_form' => $deleteForm->createView(),
-            'sites' => $sites
+            'sites' => $sites,
+            'edit_form' => $editForm->createView()
             
         ));
         
@@ -96,6 +104,9 @@ class CampingController extends Controller
         $deleteForm = $this->createDeleteForm($camping);
         $editForm = $this->createForm('SeoBundle\Form\CampingType', $camping);
         $editForm->handleRequest($request);
+
+        //$options = $editForm->get('sites')->getConfig()->getOptions();
+        //$choices = $options['choices']->getChoices();
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();

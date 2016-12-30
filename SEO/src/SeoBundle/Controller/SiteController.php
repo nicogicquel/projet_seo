@@ -5,7 +5,9 @@ namespace SeoBundle\Controller;
 use SeoBundle\Entity\Site;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Site controller.
@@ -84,12 +86,13 @@ class SiteController extends Controller
         $deleteForm = $this->createDeleteForm($site);
         $editForm = $this->createForm('SeoBundle\Form\SiteType', $site);
         $editForm->handleRequest($request);
-
+        
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('site_index');
-            //return $this->redirect('javascript:history.go(-2)');
+            //return $this->redirectToRoute('site_index');
+           //header('Location:http://stackoverflow.com');
+            return $this->redirect($_SERVER['HTTP_REFERER']);
         }
 
         return $this->render('site/edit.html.twig', array(

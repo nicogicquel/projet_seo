@@ -145,7 +145,6 @@ button {
         border-radius: 5px;
     }
     a:hover{
-        //background-color: #09ec49;
         opacity: 0.5;
         text-decoration: none;
         color: #fff;
@@ -166,6 +165,10 @@ button {
 .buttonAddBottom{
     margin-left: 3%;
     margin-top: 20px;
+}
+
+.addBottom{
+    display: flex;
 }
 
 .formHead{
@@ -293,11 +296,22 @@ thead{
 }
 
 .table {
-    width: 95%;
+    width: 95% ;
     margin: auto;
     
     td{
        border: 1px solid #ddd !important; 
+    }
+    tr{
+       border: 1px solid #ddd !important; 
+    }
+}
+
+#tableau{
+    width: 95% !important;
+    .link{
+        margin-top:15px !important;
+        text-align: center;
     }
 }
 

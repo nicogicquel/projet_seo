@@ -5,8 +5,9 @@ namespace UserBundle\Controller;
 use UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 /**
  * User controller.
  *
@@ -16,7 +17,7 @@ class UserController extends Controller
 {
     /**
      * Lists all user entities.
-     *
+     * @Security("has_role('ROLE_ADMIN')")
      * @Route("/", name="user_index")
      * @Method("GET")
      */
@@ -48,7 +49,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush($user);
 
-            return $this->redirectToRoute('user_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_index', array('id' => $user->getId()));
         }
 
         return $this->render('user/new.html.twig', array(

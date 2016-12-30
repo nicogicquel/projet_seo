@@ -49,7 +49,7 @@ class User implements UserInterface, \Serializable
 
     /**
      * 
-     * @ORM\ManyToMany(targetEntity="Role", inversedBy="users", cascade={"remove","persist"}))
+     * @ORM\ManyToMany(targetEntity="Role", inversedBy="users")
      */
     private $userRoles;
 

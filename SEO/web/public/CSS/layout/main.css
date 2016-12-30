@@ -176,25 +176,30 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 160, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 159, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonAdd {
   right: 2%;
   position: absolute;
   margin-top: 28px;
 }
 
-/* line 166, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 165, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .buttonAddBottom {
   margin-left: 3%;
   margin-top: 20px;
 }
 
-/* line 171, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 170, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.addBottom {
+  display: flex;
+}
+
+/* line 174, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .formHead {
   display: flex;
 }
 
-/* line 176, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 179, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .button {
   margin-bottom: 10px;
   margin-right: 10px;
@@ -206,7 +211,7 @@ button {
   border-radius: 5px;
 }
 
-/* line 188, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 191, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .button:hover {
   opacity: 0.5;
   -webkit-transition: all 0.2s ease-in-out;
@@ -215,7 +220,7 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 196, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 199, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .form button:hover, .form button:active, .form button:focus {
   background: #0cf090;
   -webkit-transition: all 0.2s ease-in-out;
@@ -224,7 +229,7 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 204, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 207, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .settings_accueil {
   position: absolute;
   top: 50px;
@@ -232,7 +237,7 @@ button {
   z-index: 1;
 }
 
-/* line 211, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 214, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .settings_backlinks {
   position: absolute;
   top: 155px;
@@ -241,30 +246,30 @@ button {
   font-size: 25px;
 }
 
-/* line 219, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 222, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .btn-lg {
   padding: 7px 8px 4px 7px;
 }
 
-/* line 223, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 226, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .btn-info {
   background-color: #f59331;
   border-color: #f59331;
 }
 
-/* line 226, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 229, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .btn-info:hover {
   background-color: #f59331;
   opacity: 0.8;
 }
 
-/* line 230, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 233, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .btn-info:focus {
   background-color: #f59331;
 }
 
 /**Checkbox**/
-/* line 238, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 241, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form label {
   width: 150px;
   display: inline-block !important;
@@ -272,7 +277,7 @@ button {
   margin: 0 !important;
 }
 
-/* line 244, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 247, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .checkbox_form input {
   display: inline-block !important;
   width: 3% !important;
@@ -280,7 +285,7 @@ button {
 }
 
 /**Les Tableaux**/
-/* line 255, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 258, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel {
   margin-top: 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -288,7 +293,7 @@ button {
   border-style: none;
 }
 
-/* line 262, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 265, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading {
   font-size: 25px;
   font-weight: lighter;
@@ -297,7 +302,7 @@ button {
   padding: 5px;
 }
 
-/* line 268, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 271, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a {
   color: #ffffff;
   font-weight: lighter;
@@ -305,7 +310,7 @@ button {
   margin-left: 15px;
 }
 
-/* line 273, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 276, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .panel .panel-heading a:hover {
   text-decoration: none;
   text-shadow: 0px 0px 10px #fff;
@@ -315,42 +320,58 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 284, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 287, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 table.dataTable {
   border-radius: 5px;
   box-shadow: 10px 10px 5px #888888;
 }
 
-/* line 290, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 293, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 thead {
   background-color: #33b7c0;
   color: #fff;
 }
 
-/* line 295, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 298, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .table {
   width: 95%;
   margin: auto;
 }
 
-/* line 299, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 302, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .table td {
   border: 1px solid #ddd !important;
 }
 
 /* line 305, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+.table tr {
+  border: 1px solid #ddd !important;
+}
+
+/* line 310, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#tableau {
+  width: 95% !important;
+}
+
+/* line 312, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+#tableau .link {
+  margin-top: 15px !important;
+  text-align: center;
+}
+
+/* line 319, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 section .row {
   margin: 20px;
 }
 
-/* line 309, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 323, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 .container:before, .container:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 317, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
+/* line 331, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/main.scss */
 #tableau_lengh label {
   margin-left: 2.5% !important;
   width: 45% !important;

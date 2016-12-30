@@ -12,10 +12,12 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityRepository;
 use SeoBundle\Entity\Region;
-
+use SeoBundle\Repository\SiteRepository;
 
 class CampingType extends AbstractType
 {
+    
+
     /**
      * {@inheritdoc}
      */
@@ -37,8 +39,16 @@ class CampingType extends AbstractType
                   'placeholder' => 'Choisissez un département'))
                 ->add('ville',VilleType::class, array (
                   'label' => false,
-                  'required' => false ));
-
+                  'required' => false ))
+                /*->add('sites',EntityType::class, array(
+                        'class'=>'SeoBundle:Site',
+                        'choice_label'=>'url',
+                        'attr'=> array('class'=>'checkbox_form'),
+                        'label'=>'Url liées',
+                        'multiple'=>true,
+                        'expanded'=>true,
+                        )) */;
+        
         $formModifier = function (FormInterface $form, Region $region = null) {
         $departement = null === $region ? array() : $region->getDepartements();
 

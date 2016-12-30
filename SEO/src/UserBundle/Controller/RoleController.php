@@ -48,7 +48,7 @@ class RoleController extends Controller
             $em->persist($role);
             $em->flush($role);
 
-            return $this->redirectToRoute('role_show', array('id' => $role->getId()));
+            return $this->redirectToRoute('role_index', array('id' => $role->getId()));
         }
 
         return $this->render('role/new.html.twig', array(

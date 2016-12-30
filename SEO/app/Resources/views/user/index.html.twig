@@ -38,8 +38,12 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <div class="buttonAddBottom">
-        <a href="{{ path('user_new') }}">Ajouter un nouvel utilisateur</a>
+    <div class="addBottom">
+        <div class="buttonAddBottom">
+            <a href="{{ path('user_new') }}">Ajouter un nouvel utilisateur</a>
+        </div>
+        <div class="buttonAddBottom">
+            <a href="{{ path('role_new') }}">Ajouter un nouveau rôle</a>
+        </div>
     </div>
 {% endblock %}
