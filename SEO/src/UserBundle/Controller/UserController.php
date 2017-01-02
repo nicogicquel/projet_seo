@@ -41,8 +41,12 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $user = new User();
+        //$plainPassword = $user->cryptPassword(25);
+        //$encoder = $this->container->get('security.password_encoder');
+        //$encoded = $encoder->encodePassword($user, $plainPassword);
         $form = $this->createForm('UserBundle\Form\UserType', $user);
         $form->handleRequest($request);
+        //$user->setPassword($encoded);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -89,7 +93,7 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_index', array('id' => $user->getId()));
         }
 
         return $this->render('user/edit.html.twig', array(

@@ -26,7 +26,7 @@
 
 /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
 .header_title h1 {
-  font-size: 100px;
+  font-size: 6.9em;
   margin: 0.2em;
   color: #929294;
 }
@@ -34,8 +34,8 @@
 @media (max-width: 1380px) {
   /* line 21, C:/wamp/www/projet_seo/SEO/web/public/sass/layout/header.scss */
   .header_title h1 {
-    font-size: 6em;
-    margin: 0.23em;
+    font-size: 5.6em;
+    margin: 0.38em 0.25em 0.25em;
   }
 }
 

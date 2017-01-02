@@ -41,11 +41,16 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
+     * @ORM\Column(type="string", length=60, unique=true)
+     */
+    private $email;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=255, nullable=true)
      */
-    private $salt;
+    /*private $salt;*/
 
     /**
      * 
@@ -125,12 +130,12 @@ class User implements UserInterface, \Serializable
      *
      * @return User
      */
-    public function setSalt($salt)
+    /*public function setSalt($salt)
     {
         $this->salt = $salt;
 
         return $this;
-    }
+    }*/
 
     /**
      * Get salt
@@ -139,7 +144,7 @@ class User implements UserInterface, \Serializable
      */
     public function getSalt()
     {
-        return $this->salt;
+        return null;
     }
 
     /**
@@ -225,5 +230,75 @@ class User implements UserInterface, \Serializable
         
     }
 
+    //Génère un mot de passe aléatoire
+    function cryptPassword($length = 9, $add_dashes = false, $available_sets = 'luds')
+    {
+        $sets = array();
+        if(strpos($available_sets, 'l') !== false)
+            $sets[] = 'abcdefghjkmnpqrstuvwxyz';
+        if(strpos($available_sets, 'u') !== false)
+            $sets[] = 'ABCDEFGHJKMNPQRSTUVWXYZ';
+        if(strpos($available_sets, 'd') !== false)
+            $sets[] = '23456789';
+        if(strpos($available_sets, 's') !== false)
+            $sets[] = '!@#$%&*?';
+        $all = '';
+        $password = '';
+        foreach($sets as $set)
+        {
+            $password .= $set[array_rand(str_split($set))];
+            $all .= $set;
+        }
+        $all = str_split($all);
+        for($i = 0; $i < $length - count($sets); $i++)
+            $password .= $all[array_rand($all)];
+        $password = str_shuffle($password);
+        if(!$add_dashes)
+            return $password;
+        $dash_len = floor(sqrt($length));
+        $dash_str = '';
+        while(strlen($password) > $dash_len)
+        {
+            $dash_str .= substr($password, 0, $dash_len) . '-';
+            $password = substr($password, $dash_len);
+        }
+        $dash_str .= $password;
+        return $dash_str;
+    }
+
     
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Remove userRole
+     *
+     * @param \UserBundle\Entity\Role $userRole
+     */
+    public function removeUserRole(\UserBundle\Entity\Role $userRole)
+    {
+        $this->userRoles->removeElement($userRole);
+    }
 }
