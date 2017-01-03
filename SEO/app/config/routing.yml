@@ -71,3 +71,6 @@ login_check:
 logout:
   path: /logout
 
+_errors:
+    resource: "@TwigBundle/Resources/config/routing/errors.xml"
+    prefix:   /_error
