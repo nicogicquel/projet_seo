@@ -49,6 +49,10 @@ class DepartementController extends Controller
             $em->persist($departement);
             $em->flush($departement);
 
+
+            $this->addFlash('success',
+                'Le département a bien été créé !');
+
             return $this->redirectToRoute('departement_show', array('id' => $departement->getId()));
         }
 
@@ -89,6 +93,9 @@ class DepartementController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success',
+                'Le département a bien été mis à jour !');
+
             return $this->redirectToRoute('departement_edit', array('id' => $departement->getId()));
         }
 
@@ -115,6 +122,9 @@ class DepartementController extends Controller
             $em->remove($departement);
             $em->flush($departement);
         }
+
+        $this->addFlash('success',
+                'Le département a bien été supprimé !');
 
         return $this->redirectToRoute('departement_index');
     }

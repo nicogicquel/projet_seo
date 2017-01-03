@@ -48,6 +48,8 @@ class RegionController extends Controller
             $em->persist($region);
             $em->flush($region);
 
+            $this->addFlash('success',
+                'La région a bien été créée !');
             return $this->redirectToRoute('region_show', array('id' => $region->getId()));
         }
 
@@ -88,6 +90,8 @@ class RegionController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success',
+                'La région a bien été mise à jour !');
             return $this->redirectToRoute('region_edit', array('id' => $region->getId()));
         }
 
@@ -114,7 +118,8 @@ class RegionController extends Controller
             $em->remove($region);
             $em->flush($region);
         }
-
+        $this->addFlash('success',
+                'La région a bien été supprimée !');
         return $this->redirectToRoute('region_index');
     }
 

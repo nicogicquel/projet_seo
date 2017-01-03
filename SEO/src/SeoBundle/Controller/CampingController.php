@@ -54,6 +54,9 @@ class CampingController extends Controller
             $em->persist($camping);
             $em->flush($camping);
 
+            $this->addFlash('success',
+            'Le camping a bien été créé !');
+
             return $this->redirectToRoute('camping_show', array('id' => $camping->getId()));
         }
 
@@ -79,9 +82,6 @@ class CampingController extends Controller
         $deleteForm = $this->createDeleteForm($camping);
         $editForm = $this->createForm('SeoBundle\Form\CampingType', $camping);
 
-        /*$options = $editForm->get('sites')->getConfig()->getOptions();
-        $choices = $options['choice_value']->getChoices();
-        var_dump($choices);*/
 
         return $this->render('camping/show.html.twig', array(
             'camping' => $camping,
@@ -105,14 +105,13 @@ class CampingController extends Controller
         $editForm = $this->createForm('SeoBundle\Form\CampingType', $camping);
         $editForm->handleRequest($request);
 
-        //$options = $editForm->get('sites')->getConfig()->getOptions();
-        //$choices = $options['choices']->getChoices();
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('camping_show', array('id' => $camping->getId()));
-            //return $this->redirect($_SERVER['HTTP_REFERER']);
+            $this->addFlash('success',
+            'Le camping a bien été mis à jour !');
         }
 
         return $this->render('camping/edit.html.twig', array(
@@ -138,7 +137,8 @@ class CampingController extends Controller
             $em->remove($camping);
             $em->flush($camping);
         }
-
+        $this->addFlash('success',
+            'Le camping a bien été supprimé !');
         return $this->redirectToRoute('camping_index');
     }
 

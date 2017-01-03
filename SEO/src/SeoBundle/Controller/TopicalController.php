@@ -48,6 +48,9 @@ class TopicalController extends Controller
             $em->persist($topical);
             $em->flush($topical);
 
+            $this->addFlash('success',
+                'Le topic a bien été créé !');
+            
             return $this->redirectToRoute('topical_show', array('id' => $topical->getId()));
         }
 
@@ -88,6 +91,9 @@ class TopicalController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success',
+                'Le topic a bien été mis à jour !');
+
             return $this->redirectToRoute('topical_edit', array('id' => $topical->getId()));
         }
 
@@ -115,6 +121,8 @@ class TopicalController extends Controller
             $em->flush($topical);
         }
 
+        $this->addFlash('success',
+                'Le topic a bien été supprimé !');
         return $this->redirectToRoute('topical_index');
     }
 

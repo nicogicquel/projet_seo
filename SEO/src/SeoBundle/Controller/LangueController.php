@@ -48,6 +48,8 @@ class LangueController extends Controller
             $em->persist($langue);
             $em->flush($langue);
 
+            $this->addFlash('success',
+                'La langue a bien été créée !');
             return $this->redirectToRoute('langue_show', array('id' => $langue->getId()));
         }
 
@@ -88,6 +90,8 @@ class LangueController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success',
+                'La langue a bien été mise à jour !');
             return $this->redirectToRoute('langue_edit', array('id' => $langue->getId()));
         }
 
@@ -114,7 +118,8 @@ class LangueController extends Controller
             $em->remove($langue);
             $em->flush($langue);
         }
-
+        $this->addFlash('success',
+                'La langue a bien été supprimée !');
         return $this->redirectToRoute('langue_index');
     }
 

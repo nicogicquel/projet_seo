@@ -1,17 +1,21 @@
 {% extends 'backlinks.html.twig' %}
 
+{% block title %}
+    Liste des URL
+{% endblock %}
+
 {% block section %}
     <div class="formHead">
-        <h1>Liste des Url</h1>
+        <h1>Liste des URL</h1>
         <div class="buttonAdd">
-            <a href="{{ path('site_new') }}">Ajouter une nouvelle Url</a>
+            <a href="{{ path('site_new') }}">Ajouter une nouvelle URL</a>
         </div>
     </div>
 
     <table id="tableau" class="table">
         <thead>
             <tr>
-                <th>Url</th>
+                <th>URL</th>
                 <th>Titre</th>
                 <th>Statut</th>
                 <th>Camp</th>
@@ -95,7 +99,7 @@
     </table>
 
     <div class="buttonAddBottom">
-        <a href="{{ path('camping_new') }}">Ajouter une nouvelle Url</a>
+        <a href="{{ path('camping_new') }}">Ajouter une nouvelle URL</a>
     </div>
 
 {% endblock %}

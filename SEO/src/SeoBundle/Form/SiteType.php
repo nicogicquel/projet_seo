@@ -21,7 +21,7 @@ class SiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('url', TextType::class, array(
-                    'label'=>'Url du site:'))
+                    'label'=>'URL du site:'))
                 ->add('titre', TextType::class, array(
                     'label'=>'Titre:',
                     'required'=> false))
@@ -80,22 +80,15 @@ class SiteType extends AbstractType
                     'required'=> false,
                     'placeholder' => 'Choisissez un département'
                     ))
-                /*->add('ville',EntityType::class,array(
-                    'class'=>'SeoBundle:Ville',
-                    'query_builder'=> function(EntityRepository $er){
-                        return $er->createQueryBuilder('v')
-                                  ->orderBy('v.nom', 'ASC');
-                    },
-                    'choice_label'=>'nom',
-                    'label'=>'Ville:',
-                    'required'=> false,
-                    'placeholder' => 'Choisissez une ville'
-                    ))*/
                 ->add('ville',VilleType::class,array(
                     'label'=> false))
 
                 ->add('campings',EntityType::class, array(
                         'class'=>'SeoBundle:Camping',
+                        'query_builder'=> function(EntityRepository $er){
+                        return $er->createQueryBuilder('c')
+                                  ->orderBy('c.nomCamping', 'ASC');
+                        },
                         'choice_label'=>'nomCamping',
                         'attr'=> array('class'=>'checkbox_form'),
                         'label'=>'Campings liés',

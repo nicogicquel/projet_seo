@@ -3,6 +3,7 @@
 namespace SeoBundle\Controller;
 
 use SeoBundle\Entity\Site;
+use SeoBundle\Entity\Camping;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -51,6 +52,9 @@ class SiteController extends Controller
             $em->flush($site);
 
             return $this->redirectToRoute('site_show', array('id' => $site->getId()));
+
+            $this->addFlash('success',
+                'L\'URL a bien été créée !');
         }
 
         return $this->render('site/new.html.twig', array(
@@ -87,19 +91,22 @@ class SiteController extends Controller
         $editForm = $this->createForm('SeoBundle\Form\SiteType', $site);
         $editForm->handleRequest($request);
         
+        
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            
             $this->getDoctrine()->getManager()->flush();
 
-            //return $this->redirectToRoute('site_index');
-           //header('Location:http://stackoverflow.com');
-            return $this->redirect($_SERVER['HTTP_REFERER']);
+            $this->addFlash('success',
+                'L\'URL a bien été mise à jour !');
+            
         }
-
+       
         return $this->render('site/edit.html.twig', array(
             'site' => $site,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+        
     }
 
     /**
@@ -118,8 +125,10 @@ class SiteController extends Controller
             $em->remove($site);
             $em->flush($site);
         }
+        $this->addFlash('success',
+            'L\'URL a bien été supprimée !');
 
-        return $this->redirectToRoute('site_index');
+        return $this->redirectToRoute('camping_index');
     }
 
     /**

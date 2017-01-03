@@ -48,6 +48,8 @@ class TypeController extends Controller
             $em->persist($type);
             $em->flush($type);
 
+            $this->addFlash('success',
+                'Le type a bien été créé !');
             return $this->redirectToRoute('type_show', array('id' => $type->getId()));
         }
 
@@ -88,6 +90,9 @@ class TypeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success',
+                'Le type a bien été mis à jour !');
+
             return $this->redirectToRoute('type_edit', array('id' => $type->getId()));
         }
 
@@ -114,6 +119,9 @@ class TypeController extends Controller
             $em->remove($type);
             $em->flush($type);
         }
+
+        $this->addFlash('success',
+                'Le type a bien été supprimé !');
 
         return $this->redirectToRoute('type_index');
     }

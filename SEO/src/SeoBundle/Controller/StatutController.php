@@ -48,6 +48,8 @@ class StatutController extends Controller
             $em->persist($statut);
             $em->flush($statut);
 
+            $this->addFlash('success',
+                'Le statut a bien été créé !');
             return $this->redirectToRoute('statut_show', array('id' => $statut->getId()));
         }
 
@@ -88,6 +90,8 @@ class StatutController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success',
+                'Le statut a bien été mis à jour !');
             return $this->redirectToRoute('statut_edit', array('id' => $statut->getId()));
         }
 
@@ -115,6 +119,8 @@ class StatutController extends Controller
             $em->flush($statut);
         }
 
+        $this->addFlash('success',
+                'Le statut a bien été supprimé !');
         return $this->redirectToRoute('statut_index');
     }
 
