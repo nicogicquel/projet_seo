@@ -50,7 +50,8 @@ class StatutController extends Controller
 
             $this->addFlash('success',
                 'Le statut a bien été créé !');
-            return $this->redirectToRoute('statut_show', array('id' => $statut->getId()));
+
+            return $this->redirectToRoute('statut_index');
         }
 
         return $this->render('statut/new.html.twig', array(

@@ -50,7 +50,8 @@ class RegionController extends Controller
 
             $this->addFlash('success',
                 'La région a bien été créée !');
-            return $this->redirectToRoute('region_show', array('id' => $region->getId()));
+
+            return $this->redirectToRoute('region_index');
         }
 
         return $this->render('region/new.html.twig', array(

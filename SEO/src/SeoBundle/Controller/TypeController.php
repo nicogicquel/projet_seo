@@ -50,7 +50,7 @@ class TypeController extends Controller
 
             $this->addFlash('success',
                 'Le type a bien été créé !');
-            return $this->redirectToRoute('type_show', array('id' => $type->getId()));
+            return $this->redirectToRoute('type_index');
         }
 
         return $this->render('type/new.html.twig', array(

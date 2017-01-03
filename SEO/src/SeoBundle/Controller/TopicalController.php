@@ -50,8 +50,8 @@ class TopicalController extends Controller
 
             $this->addFlash('success',
                 'Le topic a bien été créé !');
-            
-            return $this->redirectToRoute('topical_show', array('id' => $topical->getId()));
+
+            return $this->redirectToRoute('topical_index');
         }
 
         return $this->render('topical/new.html.twig', array(

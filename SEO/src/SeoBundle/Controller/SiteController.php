@@ -51,7 +51,7 @@ class SiteController extends Controller
             $em->persist($site);
             $em->flush($site);
 
-            return $this->redirectToRoute('site_show', array('id' => $site->getId()));
+            return $this->redirectToRoute('site_index');
 
             $this->addFlash('success',
                 'L\'URL a bien été créée !');

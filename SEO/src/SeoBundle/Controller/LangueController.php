@@ -50,7 +50,7 @@ class LangueController extends Controller
 
             $this->addFlash('success',
                 'La langue a bien été créée !');
-            return $this->redirectToRoute('langue_show', array('id' => $langue->getId()));
+            return $this->redirectToRoute('langue_index');
         }
 
         return $this->render('langue/new.html.twig', array(

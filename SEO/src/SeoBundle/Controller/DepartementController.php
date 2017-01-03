@@ -53,7 +53,7 @@ class DepartementController extends Controller
             $this->addFlash('success',
                 'Le département a bien été créé !');
 
-            return $this->redirectToRoute('departement_show', array('id' => $departement->getId()));
+            return $this->redirectToRoute('departement_index');
         }
 
         return $this->render('departement/new.html.twig', array(
