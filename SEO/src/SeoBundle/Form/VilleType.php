@@ -16,7 +16,7 @@ class VilleType extends AbstractType
     {
         $builder->add('nom', TextType::class, array(
                     'label'=>'Ville:',
-                    'required'    => false))
+                    'required'    => false));
                 
     }
     

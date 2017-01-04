@@ -3,7 +3,6 @@
 namespace SeoBundle\Controller;
 
 use SeoBundle\Entity\Site;
-use SeoBundle\Entity\Camping;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
