@@ -41,12 +41,8 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $user = new User();
-        //$plainPassword = $user->cryptPassword(25);
-        //$encoder = $this->container->get('security.password_encoder');
-        //$encoded = $encoder->encodePassword($user, $plainPassword);
         $form = $this->createForm('UserBundle\Form\UserType', $user);
         $form->handleRequest($request);
-        //$user->setPassword($encoded);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();

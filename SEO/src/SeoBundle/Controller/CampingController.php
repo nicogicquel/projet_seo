@@ -3,13 +3,11 @@
 namespace SeoBundle\Controller;
 
 use SeoBundle\Entity\Camping;
-use SeoBundle\Form\CampingType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\ChoiceList\ChoiceListInterface;
-use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
+
 
 /**
  * Camping controller.
@@ -109,9 +107,11 @@ class CampingController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('camping_show', array('id' => $camping->getId()));
             $this->addFlash('success',
             'Le camping a bien été mis à jour !');
+
+            return $this->redirectToRoute('camping_show', array('id' => $camping->getId()));
+            
         }
 
         return $this->render('camping/edit.html.twig', array(

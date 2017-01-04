@@ -5,8 +5,6 @@ namespace UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\Role\RoleInterface;
 use UserBundle\Entity\Role;
 
 /**
@@ -231,7 +229,7 @@ class User implements UserInterface, \Serializable
     }
 
     //Génère un mot de passe aléatoire
-    function cryptPassword($length = 9, $add_dashes = false, $available_sets = 'luds')
+    public function cryptPassword($length = 9, $add_dashes = false, $available_sets = 'luds')
     {
         $sets = array();
         if(strpos($available_sets, 'l') !== false)

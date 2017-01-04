@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 /**
  * Site controller.
@@ -51,10 +51,11 @@ class SiteController extends Controller
             $em->persist($site);
             $em->flush($site);
 
-            return $this->redirectToRoute('site_index');
-
             $this->addFlash('success',
                 'L\'URL a bien été créée !');
+
+            return $this->redirectToRoute('site_index');
+
         }
 
         return $this->render('site/new.html.twig', array(
@@ -128,7 +129,7 @@ class SiteController extends Controller
         $this->addFlash('success',
             'L\'URL a bien été supprimée !');
 
-        return $this->redirectToRoute('camping_index');
+        return $this->redirectToRoute('site_index');
     }
 
     /**

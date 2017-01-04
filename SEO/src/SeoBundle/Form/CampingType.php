@@ -10,9 +10,8 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Doctrine\ORM\EntityRepository;
 use SeoBundle\Entity\Region;
-use SeoBundle\Repository\SiteRepository;
+
 
 class CampingType extends AbstractType
 {
@@ -31,23 +30,10 @@ class CampingType extends AbstractType
                   'label'=>'Région:',
                   'required'    => false,
                   'placeholder' => 'Choisissez une région'))
-                ->add('departement',EntityType::class,array(
-                  'class'=>'SeoBundle:Departement',
-                  'choice_label'=>'nom',
-                  'label'=>'Département:',
-                  'required'    => false,
-                  'placeholder' => 'Choisissez un département'))
                 ->add('ville',VilleType::class, array (
                   'label' => false,
                   'required' => false ))
-                /*->add('sites',EntityType::class, array(
-                        'class'=>'SeoBundle:Site',
-                        'choice_label'=>'url',
-                        'attr'=> array('class'=>'checkbox_form'),
-                        'label'=>'Url liées',
-                        'multiple'=>true,
-                        'expanded'=>true,
-                        )) */;
+               ;
         
         $formModifier = function (FormInterface $form, Region $region = null) {
         $departement = null === $region ? array() : $region->getDepartements();
@@ -85,7 +71,7 @@ class CampingType extends AbstractType
       }
     );
     
-    //$builder->add('enregistrer','submit');
+    
   }
 
 
