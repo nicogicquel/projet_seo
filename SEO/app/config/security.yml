@@ -4,9 +4,7 @@ security:
     encoders:
         Symfony\Component\security\Core\User\User: plaintext
         UserBundle\Entity\User: plaintext
-        #Symfony\Component\security\Core\User\\User:
-            #algorithm: bcrypt
-            #cost: 12  
+        
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         db_provider:

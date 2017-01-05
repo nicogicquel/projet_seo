@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('public/CSS/dataTable.min.css') }}">
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('public/CSS/maxcdn.bootstrapcdn.min.css') }}">
+        <link href="{{ asset('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css') }}" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="{{ asset('public/img/favicon.png') }}" />
         <link rel="icon" type="image/x-icon" href="{{ asset('public/img/favicon.png') }} "/>
         <link rel="icon" type="image/png" href="{{ asset('public/img/favicon.png') }}" />
@@ -14,6 +15,9 @@
         
     </head>
     <body>
+
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Retourner en haut de la page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
         {% block body %}
             {% block header %}
                 <div class="header_container">
@@ -123,6 +127,7 @@
     <script type="text/javascript" src="{{ asset('public/script/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/script/dataTables.bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/script/dynamicForm.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/script/backtotop.js') }}"></script>
 {% endblock %}
     </body>
 </html>
