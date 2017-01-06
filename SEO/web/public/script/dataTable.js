@@ -1,3 +1,5 @@
 $(document).ready(function() {
-    $('#tableau').dataTable();
+    $('#tableau').dataTable({
+    responsive: true
+});
 } );

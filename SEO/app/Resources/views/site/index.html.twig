@@ -16,9 +16,9 @@
         <thead>
             <tr>
                 <th>URL</th>
-                <th>Titre</th>
+                <!--<th>Titre</th>-->
                 <th>Statut</th>
-                <th>Camp</th>
+                <!--<th>Camp</th>-->
                 <th>CT</th>
                 <th>TF</th>
                 <th>Topical</th>
@@ -37,13 +37,13 @@
         {% for site in sites %}
             <tr>
                 <td><a href="{{ site.url }}">{{ site.url }}</a></td>
-                <td>{{ site.titre }}</td>
+                <!--<td>{{ site.titre }}</td>-->
                 {% if site.statut == NULL %}
                 <td></td>
                 {% else %}
                 <td>{{ site.statut.nom }}</td>
                 {% endif %}
-                <td>{{ site.camp }}</td>
+                <!--<td>{{ site.camp }}</td>-->
                 <td>{{ site.cT }}</td>
                 <td>{{ site.tF }}</td>
                 {% if site.topical == NULL %}

@@ -40,11 +40,7 @@ class Ville
      */
     private $campings;
 
-    /**
-     *@ORM\ManyToOne(targetEntity="Departement",inversedBy="villes",cascade={"persist","merge"})
-     *@ORM\JoinColumn(name="departement_id", referencedColumnName="id")
-     */
-    private $departement;
+    
 
 
     public function __construct() {

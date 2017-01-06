@@ -46,10 +46,7 @@ class Departement
      */
     private $campings;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Ville",mappedBy="departement",cascade={"persist","remove","merge"})
-     */
-    private $villes;
+
 
     /**
      *@ORM\ManyToOne(targetEntity="Region",inversedBy="departements",cascade={"persist","merge"})

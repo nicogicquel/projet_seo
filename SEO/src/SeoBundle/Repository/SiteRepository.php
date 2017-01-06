@@ -15,7 +15,7 @@ class SiteRepository extends \Doctrine\ORM\EntityRepository
 	{
 
 	 return $this->createQueryBuilder('s')
-		->where('(s.region = 139 ) OR
+		->where('(s.region = 139 ) OR (s.region IS NULL ) OR
 			(s.region = :region_id AND s.departement = :departement_id AND s.ville IS NULL) OR
 			s.region = :region_id AND s.departement = :departement_id AND s.ville = :ville_id') 
 		

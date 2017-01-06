@@ -352,6 +352,7 @@ section .row{
     display: none;
     border-width: 5px;
     border-color: #c6356a;
+    z-index: 1;
 }
 
 .back-to-top:hover{

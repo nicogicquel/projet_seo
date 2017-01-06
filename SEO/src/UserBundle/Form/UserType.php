@@ -19,8 +19,6 @@ class UserType extends AbstractType
                     'label'=>'Username:'))
                 ->add('password', TextType::class, array(
                     'label'=>'Password:'))
-                ->add('email', TextType::class, array(
-                    'label'=>'Adresse Mail:'))
                 ->add('userRoles' ,EntityType::class, array(
                     'class'=>'UserBundle:Role',
                 'choice_label'=>'name',
